@@ -12,13 +12,13 @@
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
         </div>
-        <form id= "login" class= "input-group" method="POST" action="/users/create-session">
+        <form id= "login" class= "input-group" method="POST" action="/user/create-session">
             <input name= "email" class="input-field" type="text" required placeholder="Username">
             <input name= "password" class= "input-field" type= "password" required placeholder="password">
             <input type= "checkbox" class= "check-box"> <span>Remember Password</span>
             <input type= "submit" class= "submit-btn" value= "Log In"> 
         </form>
-        <form id= "register" class= "input-group" method="POST" action="/users/create">
+        <form id= "register" class= "input-group" method="POST" action="/user/create">
             <input name= "name" class="input-field" type="text" required placeholder="Name">
             <input name="email" class="input-field" type="email" required placeholder="Email">
             <input name="password" class= "input-field" type= "password" required placeholder="password">
