@@ -8,6 +8,7 @@ app.set('views', './views');
 
 // for static files
 app.use(express.static('assets'));
+app.use(express.urlencoded());
 
 // for layouts 
 const expressLayouts = require('express-ejs-layouts');
