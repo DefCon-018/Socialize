@@ -23,6 +23,23 @@ app.set('layout extractScripts', true);
 //database 
 const db = require('./config/mongoose');
 
+// Passport Local
+const passport = require('passport');
+const LocalStrategy = require('./config/passport-local-strategy');
+const session = require('express-session');
+app.use(session({
+    name: 'Socialize', 
+    secret: 'Something',
+    saveUninitialized : false,
+    resave: false,
+    cookie: {
+        maxAge: (1000*60*100)
+    }
+}))
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
+
 // for routes
 app.use('/', require('./routes'));
 
