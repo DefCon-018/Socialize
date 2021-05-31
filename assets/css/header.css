@@ -39,3 +39,12 @@ header .right a{
 #login-btn{
     color: blue;
 }
+
+p{
+    text-transform: capitalize;
+    color: blue;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: inline;
+    margin: 0px 20px;
+}
