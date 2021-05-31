@@ -39,3 +39,11 @@ header .right a{
 #login-btn{
     color: blue;
 }
+
+#user-name{
+    color: blue;
+    margin: 0px 20px;
+    display: inline;
+    font-weight: 700;
+    font-size: 1.1rem;
+}

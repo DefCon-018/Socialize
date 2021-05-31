@@ -1,12 +1,18 @@
 const User = require('../models/user');
 
 module.exports.signIn = function(req, res){
+    if(req.cookies.user_id){
+        return res.redirect('back');
+    }
     return res.render('sign_in', {
         title: 'Socialize | sign- in'
     })
 }
 
 module.exports.signUp = function(req, res){
+    if(req.cookies.user_id){
+        return res.redirect('back');
+    }
     return res.render('sign_up', {
         title: 'Socialize | sign-up'
     })
@@ -44,7 +50,7 @@ module.exports.createSession = function(req, res){
                 return res.redirect('/user/sign-in');
             }
             res.cookie('user_id', user.id);
-            return res.redirect('/');
+            return res.redirect('/user/profile');
         }
         else{
             return res.redirect('/user/sign-in');
@@ -52,6 +58,32 @@ module.exports.createSession = function(req, res){
     })
 }
 
+module.exports.profile = function(req, res){
+    if(req.cookies.user_id){
+        User.findById(req.cookies.user_id, function(err, user){
+            if(err){
+                console.log("Error in finding user in profile", err);
+                return;
+            }
+            if(user){
+                return res.render('profile', {
+                    title: 'User Profile',
+                    user: user
+                })
+            }
+            else{
+                return res.redirect('/user/sign-in');
+            }
+        })
+    }
+    else{
+        return res.redirect('/user/sign-in');
+    }
+}
 
+module.exports.logOut = function(req, res){
+    res.clearCookie('user_id');
+    return res.redirect('/user/sign-in');
+}
 
 
