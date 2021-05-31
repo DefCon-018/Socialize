@@ -33,4 +33,25 @@ module.exports.create = function(req, res){
     })
 }
 
+module.exports.createSession = function(req, res){
+    User.findOne({email: req.body.email}, function(err, user){
+        if(err){
+            console.log('Error in finding the user in signing in');
+            return;
+        }
+        if(user){
+            if(req.body.password != user.password){
+                return res.redirect('/user/sign-in');
+            }
+            res.cookie('user_id', user.id);
+            return res.redirect('/');
+        }
+        else{
+            return res.redirect('/user/sign-in');
+        }
+    })
+}
+
+
+
 
