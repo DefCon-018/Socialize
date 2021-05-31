@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/sign_in.css">
+<div class= "background">
+    <div class= "form-box">
+        <div class= "button-box">
+            <div class="btn"></div>
+            <button id= "btn-login" type= "button" class= "toggle-btn" onclick="handleLogin()">Log In</button>
+            <button id= "btn-signup" type= "button" class= "toggle-btn" onclick="handleRegister()">Sign Up</button>
+        </div>
+        <div class= "social-icons">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+        <form id= "login" class= "input-group" method="POST" action="/users/create-session">
+            <input name= "email" class="input-field" type="text" required placeholder="Email">
+            <input name= "password" class= "input-field" type= "password" required placeholder="password">
+            <input type= "checkbox" class= "check-box"> <span>Remember Password</span>
+            <input type= "submit" class= "submit-btn" value= "Log In"> 
+        </form>
+        <form id= "register" class= "input-group" method="POST" action="/users/create">
+            <input name= "name" class="input-field" type="text" required placeholder="Name">
+            <input name= "email" class="input-field" type="email" required placeholder="Email">
+            <input name= "password" class= "input-field" type= "password" required placeholder="password">
+            <input name= "confirm_password" class= "input-field" type= "password" required placeholder="Confirm Password">
+            <input type= "checkbox" class= "check-box"> <span>I agree with term and conditions</span>
+            <input type= "submit" class= "submit-btn" value= "Sign Up"> 
+        </form>
+    </div>
+</div>
+<script src= "/js/sign_in.js"></script>

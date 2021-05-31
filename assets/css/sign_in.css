@@ -1,0 +1,114 @@
+.background{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DAE0E6;
+}
+
+.form-box{
+    margin: 62px 0px;
+    width: 500px;
+    height: 550px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    /* box-shadow: 0px 0px 3px 4px lightgray; */
+}
+
+.button-box{
+    width: 230px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0px 0px 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    font-weight: 700;
+    color: blue;
+}
+.btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, blue, violet);
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.social-icons{
+    margin: 30px auto;
+    text-align: center;
+}
+.social-icons i{
+    padding: 10px 15px;
+    border-radius: 50%;
+    margin: 0 10px 0 10px;
+    background: linear-gradient(to right, blue, violet);
+    color: white;
+    cursor: pointer;
+}
+
+.input-group{
+    position: absolute;
+    top: 40%;
+    width: 300px;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.input-field{
+    width: 100%;
+    background: transparent;
+    margin: 5px 0;
+    padding: 10px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid black;
+}
+
+.submit-btn{
+    width: 80%;
+    background: linear-gradient(to right, blue, violet);
+    color: white;
+    font-weight: 700;
+    margin: auto;
+    display: block;
+    padding: 10px 30px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.input-field:focus{
+    outline: none;
+}
+.check-box{
+    margin: 30px 10px 30px 0;
+}
+span{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+#login{
+    left: 100px;
+}
+#register{
+    left: 550px;
+}
+
+#btn-login{
+    color: white;
+}
