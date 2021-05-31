@@ -23,6 +23,9 @@ app.set('layout extractScripts', true);
 //database 
 const db = require('./config/mongoose');
 
+// mongo store
+const MongoStore = require('connect-mongo');
+
 // Passport Local
 const passport = require('passport');
 const LocalStrategy = require('./config/passport-local-strategy');
@@ -34,7 +37,11 @@ app.use(session({
     resave: false,
     cookie: {
         maxAge: (1000*60*100)
-    }
+    },
+    store: MongoStore.create({
+        mongoUrl: 'mongodb://localhost/socialize_development',
+        autoRemove: 'disabled'
+    })
 }))
 app.use(passport.initialize());
 app.use(passport.session());

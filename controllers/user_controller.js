@@ -48,3 +48,8 @@ module.exports.profile = function(req, res){
         title: 'User Profile'
     })
 }
+
+module.exports.destroySession = function(req, res){
+    req.logout();
+    return res.redirect('/user/sign-in');
+}
