@@ -10,6 +10,10 @@ app.set('views', './views');
 app.use(express.static('assets'));
 app.use(express.urlencoded());
 
+// cookie parse 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 // for layouts 
 const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
