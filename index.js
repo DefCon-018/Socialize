@@ -2,6 +2,17 @@ const express = require('express');
 const port = 8000;
 const app = express();
 
+//sass middleware
+const sassMiddleware = require('node-sass-middleware');
+app.use(sassMiddleware({
+    src: './assets/scss',
+    dest: './assets/css',
+    debug: true,
+    outputStyle: 'expanded',
+    prefix: '/css'
+}))
+
+
 // for view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
