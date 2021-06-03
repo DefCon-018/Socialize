@@ -24,6 +24,7 @@ module.exports.create = function(req, res){
     form.on('file', function(name, file){
         console.log("Uploaded file", file.name);
     })
+    req.flash('success', "Post Published!");
     return res.redirect('back');
 }
 
@@ -45,13 +46,16 @@ module.exports.deletePost = async function(req, res){
                     message: "deleted successfully"
                 })
             }
+            req.flash('success', 'Post and associated comments are deleted!');
             return res.redirect('back');
         }
         else{
+            req.flash('error', "you can't delete this post");
             return res.redirect('back');
         }
     }
     catch(err){
+        req.flash('error', err);
         return res.redirect('back');
     }
 }

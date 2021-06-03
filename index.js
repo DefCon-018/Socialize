@@ -59,6 +59,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
+//flash setup
+const customMware = require('./config/custom_middleware');
+const flash = require('connect-flash');
+app.use(flash());
+app.use(customMware.setFlash);
+
 // for routes
 app.use('/', require('./routes'));
 
