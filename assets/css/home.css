@@ -106,10 +106,12 @@
 .home-middle .all-posts .post-card .post-card-content .image-content {
   width: 98%;
   margin: 10px auto;
+  max-height: 600px;
 }
 
 .home-middle .all-posts .post-card .post-card-content .image-content img {
   width: 100%;
+  max-height: 600px;
 }
 
 .home-middle .all-posts .post-card .post-card-likes {

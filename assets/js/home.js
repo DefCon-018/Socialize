@@ -23,19 +23,19 @@ let deletePost = function(postLink){
         $(popUp).toggleClass('active-delete-pop-up')
     })
     $(finalDelete).click(function(e){
-        e.preventDefault();
+        // e.preventDefault();
         //Todo delete a post
-        $.ajax({
-            type: 'get',
-            url: actionUrl,
-            success: function(data){
-                console.log(data);
-                $(`#post-${data.data.post_id}`).remove();
-            },
-            error: function(error){
-                console.log(error.responseText);
-            }
-        })
+        // $.ajax({
+        //     type: 'get',
+        //     url: actionUrl,
+        //     success: function(data){
+        //         console.log("data", data);
+        //         $(`#post-${data.data.post_id}`).remove();
+        //     },
+        //     error: function(error){
+        //         console.log(error.responseText);
+        //     }
+        // })
     })
 }
 let postCards = document.querySelectorAll('.post-card');

@@ -34,7 +34,10 @@ module.exports.deletePost = async function(req, res){
             fs.unlinkSync(path.join(__dirname, '..', post.image));
             post.remove();
             await Comment.deleteMany({post: req.params.id});
+            console.log(req.params.id);
             if(req.xhr){
+                console.log("YEs");
+                console.log(req.params.id);
                 return res.status(200).json({
                     data: {
                         post_id: req.params.id
