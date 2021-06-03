@@ -19,6 +19,7 @@ app.set('views', './views');
 
 // for static files
 app.use(express.static('assets'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.urlencoded());
 
 // cookie parse 
