@@ -1,3 +1,235 @@
-h1{
-    text-align: center;
+.home-container{
+    width: 100%;
+    display: flex;
+    background-color: #DAE0E6;
+}
+
+.home-middle{
+    width: 40%;
+    margin: 30px 10px;
+    .post-creating-form{
+        margin: 30px;
+        width: 100%;
+        box-shadow: 0px 0px 3px 2px lightgray;
+        background-color: white;
+        position: relative;
+        height: 125px;
+        .post-content{
+            width: 80%;
+            margin-left: 50px;
+            padding: 20px;
+            font-size: 1.1rem;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid green;
+        }
+        input[type= "submit"]{
+            padding: 10px 15px;
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            margin: 10px;
+            position: absolute;
+            right: 30px;
+            border-radius: 10px;
+        }
+    }
+    .all-posts{
+        margin: 10px;
+        width: 100%;
+        .post-card{
+            margin: 30px 10px;
+            box-shadow: 0px 0px 3px 2px lightgray;
+            background-color: white;
+            .post-card-header{
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                position: relative;
+                .post-card-avatar{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    // border: 0.5px solid black;
+                    margin: 10px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                .post-card-dots{
+                    position: absolute;
+                    right: 30px;
+                    top: 20px;
+                    cursor: pointer;
+                }
+                .post-card-delete{
+                    display: none;
+                    position: absolute;
+                    cursor: pointer;
+                    right: 30px;
+                    top: 48px;
+                    a{
+                        text-decoration: none;
+                        padding: 10px;
+                        color: black;
+                        border: 0.5px solid black;
+                    }
+                }
+                .active{
+                    display: block;
+                }
+            }
+            .post-card-content{
+                margin: 10px;
+                .image-content{
+                    width: 98%;
+                    margin: 10px auto;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .post-card-likes{
+                // border-top: 0.5px solid green;
+                // border-bottom: 0.5px solid green;
+                margin: 10px;
+                display: flex;
+                justify-content: space-between;
+                div{
+                    padding: 10px;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    span{
+                        margin: 10px;
+                        font-weight: 700;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+            .post-card-comments{
+                border-top: 0.2px solid gray;
+                form{
+                    margin:0px 50px;
+                    padding: 10px 0px;
+                    input[type= "text"]{
+                        width: 80%;
+                        padding: 8px;
+                        border-radius: 20px;
+                        outline: none;
+                        border: none;
+                        background-color: #F0F2F5;
+                        color: white;
+                    }
+                    input[type="submit"]{
+                        padding: 10px;
+                        color: white;
+                        background-color: green;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        border-radius: 10px;
+                    }
+                }
+                .comments-container{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    padding: 8px 0px;
+                    .user-comment-image{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        margin-left: 20px;
+                        border: 0.3px solid black;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+                    .show-comments{
+                        margin-left: 5px;
+                        width: 80%;
+                        padding: 8px;
+                        border-radius: 20px;
+                        background-color: #F0F2F5;
+                        .comment-user-name{
+                            font-weight: 700;
+                        }
+                        .comment-content{
+                            padding: 0px 10px;
+                        }
+                    }       
+                }
+            }
+        }
+    }
+}
+
+.delete-post-pop-up{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    .pop-up-card{
+        width: 500px;
+        height: 160px;
+        margin: 15% auto;
+        position: relative;
+        background-color: white;
+        border-radius: 10px;
+        .pop-up-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 0.3px solid black;
+            h2{
+                padding: 8px 10px;
+            }
+            div{
+                padding: 8px 10px;
+                cursor: pointer;
+                transform: rotate(45deg); 
+                font-size: 2rem;
+                color: gray;         
+            }
+        }
+        .pop-up-content{
+            p{
+                padding: 10px 8px;
+            }
+        }
+        .pop-up-buttons{
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            p{
+                color: blue;
+                cursor: pointer;
+                font-weight: 700;
+                display: inline;
+                margin-right: 30px;
+            }
+            a{
+                text-decoration: none;
+                padding: 8px 15px;
+                color: white;
+                background-color: blue;
+            }
+        }
+    }
+
+}
+.active-delete-pop-up{
+    display: block;
 }

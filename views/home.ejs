@@ -1,11 +1,22 @@
-<form enctype="multipart/form-data" action="/post/create" method="POST">
-    <input type= "text" name="content" required>
-    <input type="file" name="image" required>
-    <input type="submit" value="Add Post">
-</form>
+<link rel= 'stylesheet' href= "/css/home.css">
 
-<% for(post of posts){%>
-    <div>
-        <img src= "<%= post.image %>" width="100px" height="100px">
+<div class = "home-container">
+    <div class="home-middle">
+        <% if(locals.user){%>
+            <div class="post-creating-form">
+                <form enctype="multipart/form-data" action="/post/create" method="POST">
+                    <input type= "text" name="content" required>
+                    <input type="file" name="image" required>
+                    <input type="submit" value="Add Post">
+                </form>
+            </div>
+        <%}%>
+        <div class="all-posts">
+            <% for(post of posts){%>
+                <%- include('_post') -%>
+            <%}%>
+        </div>
     </div>
-<%}%>
+</div>
+
+<script src= "/js/home.js"></script>
