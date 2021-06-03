@@ -31,7 +31,6 @@ let deletePost = function(postLink){
             success: function(data){
                 console.log(data);
                 $(`#post-${data.data.post_id}`).remove();
-                $(popUp).toggleClass('active-delete-pop-up')
             },
             error: function(error){
                 console.log(error.responseText);

@@ -42,6 +42,7 @@ module.exports.deletePost = async function(req, res){
                     message: "deleted successfully"
                 })
             }
+            return res.redirect('back');
         }
         else{
             return res.redirect('back');
