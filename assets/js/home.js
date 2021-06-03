@@ -29,14 +29,9 @@ let deletePost = function(postLink){
             type: 'get',
             url: actionUrl,
             success: function(data){
+                console.log(data);
                 $(`#post-${data.data.post_id}`).remove();
-                new Noty({
-                    theme: 'relax',
-                    text: 'Post Deleted',
-                    type: 'success',
-                    layout: 'topRight',
-                    timeout: '1500'
-                }).show();
+                $(popUp).toggleClass('active-delete-pop-up')
             },
             error: function(error){
                 console.log(error.responseText);
