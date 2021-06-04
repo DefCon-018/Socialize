@@ -41,6 +41,8 @@ const MongoStore = require('connect-mongo');
 // Passport Local
 const passport = require('passport');
 const LocalStrategy = require('./config/passport-local-strategy');
+const JWTStrategy = require('./config/passport-jwt-strategy');
+
 const session = require('express-session');
 app.use(session({
     name: 'Socialize', 
