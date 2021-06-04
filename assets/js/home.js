@@ -28,7 +28,7 @@ let deletePost = function(postLink){
     })
     $(likeBtn).click(function(e){
         e.preventDefault();
-        console.log(likeUrl);
+        // console.log(likeUrl);
         let val = Number(likeCount.text());
         $.ajax({
             type: 'post',

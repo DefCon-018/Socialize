@@ -43,6 +43,10 @@ const passport = require('passport');
 const LocalStrategy = require('./config/passport-local-strategy');
 const JWTStrategy = require('./config/passport-jwt-strategy');
 
+// socket setup
+const httpServer = require('http').createServer();
+const chatSocket = require('./config/chat_socket')
+
 const session = require('express-session');
 app.use(session({
     name: 'Socialize', 
