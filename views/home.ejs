@@ -1,6 +1,21 @@
 <link rel= 'stylesheet' href= "/css/home.css">
 
 <div class = "home-container">
+    <div class="all-peoples">
+        <% for(let individual of people){%>
+            <% if(user.id != individual.id){%> 
+                <div class="individual">
+                    <div class="individual-avatar">
+                        <img>
+                    </div>
+                    <div class="individual-details">
+                        <h2 class="individual-name"><%= individual.name %></h2>
+                        <button class="friend-request-btn">Add Friend</button>
+                    </div>
+                </div>
+            <%}%>
+        <%}%>
+    </div>
     <div class="home-middle">
         <% if(locals.user){%>
             <div class="post-creating-form">
