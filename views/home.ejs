@@ -2,7 +2,9 @@
 
 <div class = "home-container">
     <div class="all-peoples">
-        <% for(let individual of people){%>
+        <% if(locals.user){%> 
+            <% for(let individual of people){%>
+              <% if(locals.user.id != individual.id){%>
                 <div class="individual">
                     <div class="individual-avatar">
                         <img>
@@ -12,6 +14,8 @@
                         <button class="friend-request-btn">Add Friend</button>
                     </div>
                 </div>
+              <%}%>
+            <%}%>
         <%}%>
     </div>
     <div class="home-middle">

@@ -40,10 +40,10 @@
     </div>
     <div class="post-card-likes">
         <div class="toggle-like-button">
-            <a href="/like/toggle/?id=<%= post._id %>&type=Post"><i class="far fa-heart"></i><span>61 Likes</span></a>
+            <a class= "like-link" href="/like/toggle/?id=<%= post._id %>&type=Post"><i class="far fa-heart"></i><span class="show-like"><span class="like-count"><%= post.likes.length %></span> Likes</span></a>
         </div>
         <div>
-            <i class="far fa-comment-alt"></i><span>5 Comments</span>
+            <i class="far fa-comment-alt"></i><span class="show-like">5 Comments</span>
         </div>
     </div>
     <div class="post-card-comments">

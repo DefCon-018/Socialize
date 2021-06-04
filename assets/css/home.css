@@ -120,13 +120,18 @@
   justify-content: space-between;
 }
 
+.home-middle .all-posts .post-card .post-card-likes a {
+  text-decoration: none;
+  color: black;
+}
+
 .home-middle .all-posts .post-card .post-card-likes div {
   padding: 10px;
   font-size: 1.2rem;
   cursor: pointer;
 }
 
-.home-middle .all-posts .post-card .post-card-likes div span {
+.home-middle .all-posts .post-card .post-card-likes div .show-like {
   margin: 10px;
   font-weight: 700;
   font-size: 0.9rem;

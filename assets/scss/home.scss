@@ -102,11 +102,15 @@
                 margin: 10px;
                 display: flex;
                 justify-content: space-between;
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
                 div{
                     padding: 10px;
                     font-size: 1.2rem;
                     cursor: pointer;
-                    span{
+                    .show-like{
                         margin: 10px;
                         font-weight: 700;
                         font-size: 0.9rem;

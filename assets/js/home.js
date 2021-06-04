@@ -3,6 +3,10 @@ let deletePost = function(postLink){
     let deleteBox = $(' .post-card-delete', postLink);
     let actionUrl = $(' .final-delete', postLink).prop('href');
     let popUp = $(' .delete-post-pop-up', postLink);
+    let likeBtn = $(' .toggle-like-button', postLink);
+    let likeUrl = $(' .like-link', postLink).prop('href');
+    let likeCount = $(' .like-count', postLink);
+    let heart = $(' .fa-heart', postLink);
     // console.log(dot);
     $(dot).click(function(e){
         $(deleteBox).toggleClass('active');
@@ -21,6 +25,33 @@ let deletePost = function(postLink){
     $(closePopUp).click(function(){
         $(deleteBox).toggleClass('active');
         $(popUp).toggleClass('active-delete-pop-up')
+    })
+    $(likeBtn).click(function(e){
+        e.preventDefault();
+        console.log(likeUrl);
+        let val = Number(likeCount.text());
+        $.ajax({
+            type: 'post',
+            url: likeUrl,
+            success: function(data){
+                if(data.data.deleted){
+                    val = val-1;
+                    $(likeCount).text(val);
+                    $(heart).removeClass('fas');
+                    $(heart).addClass('far');
+                }
+                else{
+                    val = val + 1;
+                    $(likeCount).text(val);
+                    $(heart).removeClass('far');
+                    $(heart).addClass('fas');
+                    $(heart).css("color", "red");
+                }
+            },
+            error: function(err){
+
+            }
+        })
     })
     $(finalDelete).click(function(e){
         // e.preventDefault();

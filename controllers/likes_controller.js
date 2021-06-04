@@ -17,7 +17,8 @@ module.exports.toggleLike = async function(req, res){
             likeable: req.query.id,
             onModel: req.query.type
         })
-
+        // console.log("likeable", likeable);
+        // console.log("exis", existingLike);
         if(existingLike){
             deleted = true;
             likeable.likes.pull(existingLike._id);
