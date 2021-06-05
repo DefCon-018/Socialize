@@ -1,7 +1,7 @@
 <div class="post-card" id= "post-<%= post._id %>">
     <div class="post-card-header">
         <div class="post-card-avatar">
-            <img>
+            <img src= "<%= post.user.avatar %>">
         </div>
         <div class="post-card-name">
             <h4><%= post.user.name %></h4>
@@ -58,7 +58,7 @@
             <% for(let comment of post.comments){%> 
                <div class="comments-container" id= "comment-<%= comment._id %>">
                     <div class="user-comment-image">
-                        <img>
+                        <img src= "<%= comment.user.avatar %>">
                     </div>
                     <div class= "show-comments">
                         <div class= "comment-user-name">

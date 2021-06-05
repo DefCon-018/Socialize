@@ -161,7 +161,7 @@ function getComment(comment){
     return `
         <div class="comments-container" id= "comment-${comment._id}">
             <div class="user-comment-image">
-                <img>
+                <img src= "${comment.user.avatar}">
             </div>
             <div class= "show-comments">
                 <div class= "comment-user-name">

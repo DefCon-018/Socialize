@@ -1,4 +1,17 @@
 <link rel = "stylesheet" href="/css/profile.css">
+
+
+<% if(locals.user){%> 
+    <img src= "<%= user.avatar %>" width="100px" height="100px">
+    <form action= "/user/update/<%= user.id %>" method="POST" enctype="multipart/form-data">
+        <input type= "text" name="name" value="<%= user.name %>">
+        <input type= "email" name= "email" value="<%= user.email %>">
+        <input type= "file" name="avatar">
+        <input type="submit" value="Update"> 
+    </form>
+<%}%>
+
+
 <!-- <div id= "profile-page">
     <div class="profile-cover-photo">
         <img src= "https://www.setaswall.com/wp-content/uploads/2017/06/Dont-stress-me-you-cant-impress-me-851-x-315-768x284.jpg">
