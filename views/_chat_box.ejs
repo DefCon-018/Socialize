@@ -3,17 +3,25 @@
 
     <div class="chat-box">
         <div class="chat-box-header">
-            
+            <div class= "make-small">
+                <i class="far fa-window-minimize"></i>
+            </div>
         </div>
-        <div class="chat-box-body">
-
+        <div id="chat-box-body">
+            <div class="others-message">
+                <span>Other message</span>
+            </div>
+            <div class="my-message">
+                <span>My message</span>
+            </div>
         </div>
         <div class="chat-box-footer">
             <form>
-                <input type="text" required>
-                <input type="submit" value="Send">
+                <input type="text" id= "chat-message" placeholder= "Type message here..." required>
+                <button id="message-send">Send</button>
             </form>
         </div>
     </div>
 
 <%}%>
+<script src= "/js/chat_box.js"></script>

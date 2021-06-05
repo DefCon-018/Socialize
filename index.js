@@ -44,8 +44,10 @@ const LocalStrategy = require('./config/passport-local-strategy');
 const JWTStrategy = require('./config/passport-jwt-strategy');
 
 // socket setup
-const httpServer = require('http').createServer();
-const chatSocket = require('./config/chat_socket')
+const chatServer = require('http').createServer();
+const chatSocket = require('./config/chat_socket').chatSocket(chatServer);
+chatServer.listen(5000);
+console.log("chat server is running on port 5000");
 
 const session = require('express-session');
 app.use(session({
