@@ -165,10 +165,46 @@
                         border-radius: 20px;
                         background-color: #F0F2F5;
                         .comment-user-name{
-                            font-weight: 700;
+                            // font-weight: 700;
+                            position: relative;
+                            // font-size: 0.8rem;
+                            h3{
+                                font-size: 0.8rem;
+                                
+                            }
+                            .comment-card-dots{
+                                font-size: 0.8rem;
+                                color: black;
+                                position: absolute;
+                                right: 10px;
+                                top: 0px;
+                                cursor: pointer;
+                            }
+                            .comment-card-delete{
+                                display: none;
+                                position: absolute;
+                                cursor: pointer;
+                                right: 5px;
+                                top: -22px;
+                                z-index: 200;
+                                a{
+                                    font-weight: 400;
+                                    background-color: white;
+                                    font-size: 0.8rem;
+                                    text-decoration: none;
+                                    padding: 8px;
+                                    color: black;
+                                    border: 0.1px solid black;
+                                }
+                            }
+                            .comment-active{
+                                display: block;
+                            }
                         }
                         .comment-content{
                             padding: 0px 10px;
+                            // font-size: 0.7rem;
+                            font-weight: 300;
                         }
                     }       
                 }
@@ -181,7 +217,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     overflow: auto;
     top: 0;
     left: 0;
@@ -236,6 +272,72 @@
     }
 
 }
+
+.delete-comment-pop-up{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    .pop-up-card-comment{
+        width: 500px;
+        height: 160px;
+        margin: 15% auto;
+        position: relative;
+        background-color: white;
+        border-radius: 10px;
+        .pop-up-header-comment{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 0.3px solid black;
+            h2{
+                padding: 8px 10px;
+            }
+            div{
+                padding: 8px 10px;
+                cursor: pointer;
+                transform: rotate(45deg); 
+                font-size: 2rem;
+                color: gray;         
+            }
+        }
+        .pop-up-content-comment{
+            p{
+                padding: 10px 8px;
+            }
+        }
+        .pop-up-buttons-comment{
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            p{
+                color: blue;
+                cursor: pointer;
+                font-weight: 700;
+                display: inline;
+                margin-right: 30px;
+            }
+            a{
+                text-decoration: none;
+                padding: 8px 15px;
+                color: white;
+                background-color: blue;
+            }
+        }
+    }
+
+}
+
+
 .active-delete-pop-up{
+    display: block;
+}
+
+.active-delete-pop-up-comment{
     display: block;
 }
