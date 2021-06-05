@@ -68,6 +68,14 @@ let deletePost = function(postLink){
 
     let createComment = $(' .show-post-comments', postLink);
     let newCommentForm = $(' #comment-create-form', postLink);
+
+    let toggleCommentButton = $(' .toggle-comment-button', postLink);
+    let postCardComment = $(' .post-card-comments', postLink);
+
+    $(toggleCommentButton).click(function(){
+        $(postCardComment).slideToggle('1000');
+    })
+
     $(newCommentForm).submit(function(e){
         e.preventDefault();
         $.ajax({

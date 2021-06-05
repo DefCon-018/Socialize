@@ -1,9 +1,11 @@
 header{
+    position: sticky;
+    top: 0px;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    background-color: #FFFFFF;
+    background-color:white;
     box-shadow: 0px 0px 3px 3px lightgray;
     z-index: 4;
 }
@@ -34,8 +36,8 @@ header .right a{
     transition: 0.5s;
 }
 #signup-btn:hover{
-    background-color: #1484D6;
-    border: 1px solid #1484D6;
+    background-color: blueviolet;
+    border: 1px solid blueviolet;
 }
 #login-btn{
     color: blue;

@@ -1,23 +1,32 @@
 <link rel= 'stylesheet' href= "/css/home.css">
 
 <div class = "home-container">
+    <% if(locals.user){%>
     <div class="all-peoples">
+        <div class="people-you-may-know">
+            <h3>People you may know</h3>
+        </div>
         <% if(locals.user){%> 
             <% for(let individual of people){%>
               <% if(locals.user.id != individual.id){%>
                 <div class="individual">
-                    <div class="individual-avatar">
-                        <img>
+                    <div class="individual-container">
+                        <div class="individual-avatar">
+                            <img src= "<%= individual.avatar %>">
+                        </div>
+                        <div class="individual-details">
+                            <h3 class="individual-name"><%= individual.name %></h3>
+                        </div>
                     </div>
-                    <div class="individual-details">
-                        <h2 class="individual-name"><%= individual.name %></h2>
-                        <button class="friend-request-btn">Add Friend</button>
+                    <div class="add-friend-button">
+                        <button class="friend-request-btn"><span><i class="fas fa-plus"></i></span>Add Friend</button>
                     </div>
                 </div>
               <%}%>
             <%}%>
         <%}%>
     </div>
+    <%}%>
     <div class="home-middle">
         <% if(locals.user){%>
             <div class="post-creating-form">

@@ -4,9 +4,70 @@
     background-color: #DAE0E6;
 }
 
+.all-peoples{
+    position: absolute;
+    width: 25%;
+    height: 500px;
+    left: 40px;
+    top: 120px;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: white;
+    .people-you-may-know{
+        padding: 12px 8px;
+        border-bottom: 0.3px solid black;
+    }
+    .individual{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0px;
+        // border-bottom: 0.1px solid black;
+        .individual-container{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0px 10px;
+            .individual-avatar{
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            .individual-details{
+                h3{
+                    padding: 8px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+            }
+        }
+        
+        .add-friend-button{
+            padding: 0px 10px 0px 5px;
+            button{
+                span{
+                    padding: 5px;
+                }
+                padding: 8px 8px;
+                background-color: blue;
+                color: white;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
 .home-middle{
     width: 40%;
-    margin: 30px 10px;
+    margin: 30px auto;
     .post-creating-form{
         margin: 30px;
         width: 100%;
@@ -43,6 +104,7 @@
             margin: 30px 10px;
             box-shadow: 0px 0px 3px 2px lightgray;
             background-color: white;
+            border-radius: 8px;
             .post-card-header{
                 width: 100%;
                 display: flex;
@@ -119,6 +181,7 @@
             }
             .post-card-comments{
                 border-top: 0.2px solid gray;
+                display: none;
                 form{
                     margin:0px 50px;
                     padding: 10px 0px;
