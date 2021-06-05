@@ -78,9 +78,8 @@ let deletePost = function(postLink){
                 console.log(data);
                 let newComment = getComment(data.data.comment);
                 $(createComment).append(newComment);
-                // commentLink.push(newComment);
-                // deleteComment(commentLink);
-                // deleteCommentHandler(newComment);
+                let getNewComment = $(`#comment-${data.data.comment._id}`) 
+                deleteCommentHandler(getNewComment);
                 console.log(newComment);
             },
             error: function(err){
