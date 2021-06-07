@@ -25,7 +25,7 @@ module.exports.home = async function(req, res){
             }
         }
         // console.log(user_detail.friendship[0].to_user);
-        // console.log(friends);
+        console.log(friends);
         return res.render('home', {
             title: 'Socialize | Home',
             posts: posts,

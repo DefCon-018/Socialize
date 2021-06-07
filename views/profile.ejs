@@ -20,11 +20,69 @@
         <div class="profile-user-avatar">
             <img src= "<%=user_details.avatar%>">
         </div>
+        <div class="profile-user-name">
+            <h1><%= user_details.name %></h1>
+        </div>
+        <div class="profile-options">
+           <div class="options">
+            <h3>Post</h3>
+            <h3>Introduction</h3>
+            <h3>Friends</h3>
+           </div>
+           <div class="other-options">
+            <a href= "/friend/create/<%= user_details._id %>" class="friend-request-btn"><span><i class="fas fa-plus"></i></span>Add Friend</a>
+           </div>
+        </div>
     </div>
     <div class="update-profile">
 
     </div>
     <div class="profile-feed">
+
+        <div class="profile-left">
+            <div class="profile-introduction">
+                <div class="intro">
+                    <h3>Introduction</h3>
+                </div>
+                <div class="intro-options">
+                    <h3><span><i class="fas fa-suitcase"></i></span><h2></h2></h3>
+                    <h3><span><i class="fas fa-home"></i></span><h2></h2></h3>
+                    <h3><span><i class="fas fa-map-marker-alt"></i></span><h2></h2></h3>
+                </div>
+            </div>
+
+            <div class="all-photos">
+                <div class="intro">
+                    <h3>Photos</h3>
+                </div>
+                <div class="photos">
+                    <% for(let post of posts){%>
+                        <div class="photo">
+                            <img src= "<%= post.image %>">
+                        </div>
+                    <%}%>
+                </div>
+            </div>
+
+            <div class="all-friends">
+                <div class="intro">
+                    <h3>Friends</h3>
+                </div>
+                <div class="friends-container">
+                    <% for(let friend of friends){%>
+                        <div class="friend-about">
+                            <div class="friend-photo">
+                                <img src= "<%= friend.avatar %>">
+                            </div>
+                            <div class="friend-name">
+                                <h4><%= friend.name %></h4>
+                            </div>
+                        </div>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+
         <div class="home-middle">
             <div class="all-posts">
                 <% for(let post of posts){%> 

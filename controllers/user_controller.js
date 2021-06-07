@@ -51,7 +51,7 @@ module.exports.create = function(req, res){
 
 module.exports.createSession = function(req, res){
     req.flash('success', 'Logged in successfully');
-    return res.redirect('/user/profile');
+    return res.redirect('/');
 }
 
 module.exports.profile = async function(req, res){
@@ -59,20 +59,23 @@ module.exports.profile = async function(req, res){
         path: 'friendship',
         populate: {
             path: 'to_user',
-            populate: {
-                path: 'user'
-            }
+            populate: 'user'
         }
     });
+    let friends = [];
+    for(let friend of user.friendship){
+        friends.push(friend.to_user);
+    }
     let posts = await Post.find({user: req.params.id}).sort('-createdAt').populate('likes').populate('user').populate({
         path: 'comments',
         populate:{
             path: 'user'
         }
     })
-    // console.log(posts);
+    console.log(friends);
     return res.render('profile', {
         title: 'Socialize | profile',
+        friends: friends,
         user_details: user,
         posts: posts
     })
