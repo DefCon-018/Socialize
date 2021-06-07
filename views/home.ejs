@@ -10,16 +10,17 @@
             <% for(let individual of people){%>
               <% if(locals.user.id != individual.id){%>
                 <div class="individual">
+                    <div class="individual-avatar">
+                        <img src= "<%= individual.avatar %>">
+                    </div>
                     <div class="individual-container">
-                        <div class="individual-avatar">
-                            <img src= "<%= individual.avatar %>">
-                        </div>
                         <div class="individual-details">
                             <h3 class="individual-name"><%= individual.name %></h3>
                         </div>
-                    </div>
-                    <div class="add-friend-button">
-                        <button class="friend-request-btn"><span><i class="fas fa-plus"></i></span>Add Friend</button>
+                        <div class="add-friend-button">
+                            <button class="friend-request-btn"><span><i class="fas fa-plus"></i></span>Add Friend</button>
+                            <button class="view-profile-btn"><span>View Profile</button>
+                        </div>
                     </div>
                 </div>
               <%}%>
@@ -31,7 +32,7 @@
         <% if(locals.user){%>
             <div class="post-creating-form">
                 <form enctype="multipart/form-data" action="/post/create" method="POST">
-                    <input type= "text" name="content" required>
+                    <input type= "text" name="content" required placeholder="what's in your mind?">
                     <input type="file" name="image" required>
                     <input type="submit" value="Add Post">
                 </form>
