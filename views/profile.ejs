@@ -1,7 +1,7 @@
 <link rel = "stylesheet" href="/css/profile.css">
+<link rel= "stylesheet" href="/css/home.css">
 
-
-<% if(locals.user){%> 
+<!-- <% if(locals.user){%> 
     <img src= "<%= user.avatar %>" width="100px" height="100px">
     <form action= "/user/update/<%= user.id %>" method="POST" enctype="multipart/form-data">
         <input type= "text" name="name" value="<%= user.name %>">
@@ -9,25 +9,131 @@
         <input type= "file" name="avatar">
         <input type="submit" value="Update"> 
     </form>
-<%}%>
+<%}%> -->
 
 
-<!-- <div id= "profile-page">
+<div id= "profile-page">
     <div class="profile-cover-photo">
-        <img src= "https://www.setaswall.com/wp-content/uploads/2017/06/Dont-stress-me-you-cant-impress-me-851-x-315-768x284.jpg">
+        <div class="cover-photo">
+            <img src= "https://www.setaswall.com/wp-content/uploads/2017/06/Dont-stress-me-you-cant-impress-me-851-x-315-768x284.jpg">
+        </div>
         <div class="profile-user-avatar">
-            <img src= "">
+            <img src= "<%=user_details.avatar%>">
         </div>
     </div>
     <div class="update-profile">
 
     </div>
     <div class="profile-feed">
-        <div class="">
-            
+        <div class="home-middle">
+            <div class="all-posts">
+                <% for(let post of posts){%> 
+                    <div class="post-card" id= "post-<%= post._id %>">
+                        <div class="post-card-header">
+                            <div class="post-card-avatar">
+                                <img src= "<%= post.user.avatar %>">
+                            </div>
+                            <div class="post-card-name">
+                                <h4><%= post.user.name %></h4>
+                            </div>
+                            <% if(locals.user && locals.user.id == post.user.id){%>
+                                <div class= 'post-card-dots'>
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </div>
+                                <div class="post-card-delete">
+                                    <a><span><i class="fas fa-trash-alt"></i></span> Delete post</a>
+                                </div>
+                                <div class="delete-post-pop-up">
+                                    <div class="pop-up-card">
+                                        <div class="pop-up-header">
+                                            <h2>delete post?</h2>
+                                            <div class="close-pop-up">+</div>
+                                        </div>
+                                        <div class="pop-up-content">
+                                            <p>Are you sure you want to delete this post?</p>
+                                        </div>
+                                        <div class="pop-up-buttons">
+                                            <p class="cancel-delete">Cancel</p>
+                                            <a href="/post/delete-post/<%= post._id %>" class="final-delete">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <%}%>
+                        </div>
+                        <div class="post-card-content">
+                            <div class="text-content">
+                                <p><%= post.content %></p>
+                            </div>
+                            <div class="image-content">
+                                <img src= "<%= post.image %>">
+                            </div>
+                        </div>
+                        <div class="post-card-likes">
+                            <div class="toggle-like-button">
+                                <a class= "like-link" href="/like/toggle/?id=<%= post._id %>&type=Post"><i class="far fa-heart"></i><span class="show-like"><span class="like-count"><%= post.likes.length %></span> Likes</span></a>
+                            </div>
+                            <div class="toggle-comment-button">
+                                <i class="far fa-comment-alt"></i><span class="show-like">5 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-card-comments">
+                            <% if(locals.user){%> 
+                                <form method="POST" action="comment/create" id="comment-create-form">
+                                    <input placeholder="Add a comment..." type= "text" name= "content" required></input>
+                                    <input type= "hidden" name= "post" value="<%= post._id %>">
+                                    <input type= "submit" value= "comment" class= "create-new-comment">
+                                </form>
+                            <%}%>
+                            <div class= "show-post-comments">
+                                <% for(let comment of post.comments){%> 
+                                   <div class="comments-container" id= "comment-<%= comment._id %>">
+                                        <div class="user-comment-image">
+                                            <img src= "<%= comment.user.avatar %>">
+                                        </div>
+                                        <div class= "show-comments">
+                                            <div class= "comment-user-name">
+                                                <h3><%= comment.user.name %></h3>
+                                                <% if(locals.user && (comment.user.id == user.id || post.user.id == user.id)){%>
+                                                    <div class= 'comment-card-dots'>
+                                                        <i class="fas fa-ellipsis-h"></i>
+                                                    </div>
+                                                    <div class="comment-card-delete">
+                                                        <a><span><i class="fas fa-trash-alt"></i></span> Delete comment</a>
+                                                    </div>
+                                                    <div class="delete-comment-pop-up">
+                                                        <div class="pop-up-card-comment">
+                                                            <div class="pop-up-header-comment">
+                                                                <h2>delete comment?</h2>
+                                                                <div class="close-pop-up-comment">+</div>
+                                                            </div>
+                                                            <div class="pop-up-content-comment">
+                                                                <p>Are you sure you want to delete this comment?</p>
+                                                            </div>
+                                                            <div class="pop-up-buttons-comment">
+                                                                <p class="cancel-delete-comment">Cancel</p>
+                                                                <a href="/comment/delete-comment/<%= comment._id %>" class="final-delete-comment">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <%}%>
+                                            </div>
+                                            <div class= "comment-content">
+                                                <%= comment.content %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <%}%>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                <%}%>
+            </div>
         </div>
         <div>
 
         </div>
     </div>
-</div> -->
+</div>
+
+<script src= "/js/home.js"></script>

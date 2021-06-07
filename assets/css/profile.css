@@ -1,0 +1,41 @@
+#profile-page {
+  background-color: #DAE0E6;
+}
+
+#profile-page .profile-cover-photo {
+  width: 100%;
+  position: relative;
+}
+
+#profile-page .profile-cover-photo .cover-photo {
+  width: 100%;
+  max-height: 45vh;
+}
+
+#profile-page .profile-cover-photo .cover-photo img {
+  width: 100%;
+  max-height: 45vh;
+}
+
+#profile-page .profile-cover-photo .profile-user-avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 3px 3px white;
+}
+
+#profile-page .profile-cover-photo .profile-user-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#profile-page .profile-feed {
+  margin-top: 200px;
+}

@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
+const Post = require('../models/post');
 
 module.exports.signIn = function(req, res){
     if(req.isAuthenticated()){
@@ -53,9 +54,27 @@ module.exports.createSession = function(req, res){
     return res.redirect('/user/profile');
 }
 
-module.exports.profile = function(req, res){
+module.exports.profile = async function(req, res){
+    let user = await User.findById(req.params.id).populate({
+        path: 'friendship',
+        populate: {
+            path: 'to_user',
+            populate: {
+                path: 'user'
+            }
+        }
+    });
+    let posts = await Post.find({user: req.params.id}).sort('-createdAt').populate('likes').populate('user').populate({
+        path: 'comments',
+        populate:{
+            path: 'user'
+        }
+    })
+    // console.log(posts);
     return res.render('profile', {
-        title: 'User Profile'
+        title: 'Socialize | profile',
+        user_details: user,
+        posts: posts
     })
 }
 

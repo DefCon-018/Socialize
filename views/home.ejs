@@ -50,7 +50,7 @@
     <div class="friends">
         <% if(locals.user){%>
             <% for(let friend of friends){%>
-                <div class="friend">
+                <div class="friend" data-id = "<%= friend._id %>" data-name= "<%= friend.name %>">
                     <div class="friend-avatar">
                         <img src= "<%= friend.avatar %>">
                     </div>
