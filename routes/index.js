@@ -9,5 +9,6 @@ router.use('/post', require('./post'));
 router.use('/comment', require('./comment'));
 router.use('/api', require('./api'));
 router.use('/like', require('./like'));
+router.use('/friend', require('./friend'));
 
 module.exports = router;

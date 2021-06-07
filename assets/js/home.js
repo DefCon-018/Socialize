@@ -203,3 +203,28 @@ function getComment(comment){
          </div>
     `
 }
+
+
+function addFriendship(person){
+    let addBtn = $(' .friend-request-btn', person);
+    let url = $(addBtn).prop('href');
+    addBtn.click(function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'get',
+            url: url,
+            success: function(data){
+                console.log(data);
+            },
+            error: function(err){
+                console.log(err.responseText);
+            }
+        })
+    })
+}
+
+let people = $('.individual');
+
+for(let person of people){
+    addFriendship(person);
+}

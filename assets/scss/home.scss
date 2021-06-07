@@ -25,7 +25,6 @@
             width: 80px;
             height: 80px;
             padding: 0px 5px 0px 15px;
-            border-radius: 5px;
             img{
                 width: 100%;
                 height: 100%;
@@ -34,7 +33,7 @@
         .individual-container{
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-evenly;
             padding: 0px 10px;
             .individual-details{
                 h3{
@@ -42,9 +41,13 @@
                     font-size: 1rem;
                     font-weight: 600;
                 }
+                // margin: 0px 0px 5px 0px ;
             }
             .add-friend-button{
                 padding: 0px 10px 0px 5px;
+                a{
+                    text-decoration: none;
+                }
                 .friend-request-btn{
                     span{
                         padding: 5px;
@@ -72,6 +75,37 @@
         }
         
     }
+}
+
+.friends{
+    position: fixed;
+    width: 400px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    // background-color: white;
+    box-shadow:  0px 0px 3px 2px lightgray;
+    .friend{
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        .friend-avatar{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 5px;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+friends:hover{
+    background-color: gray;
 }
 
 .home-middle{

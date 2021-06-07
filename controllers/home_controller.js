@@ -10,11 +10,27 @@ module.exports.home = async function(req, res){
                 path: 'user'
             }
         })
-        // console.log(posts);
+
+        let friends = [];
+        if(req.user){
+            let user_detail = await User.findById(req.user.id).populate({
+                path: 'friendship',
+                populate:{
+                    path: 'to_user',
+                    populate: 'user'
+                },
+            });
+            for(let friend of user_detail.friendship){
+                friends.push(friend.to_user);
+            }
+        }
+        // console.log(user_detail.friendship[0].to_user);
+        // console.log(friends);
         return res.render('home', {
             title: 'Socialize | Home',
             posts: posts,
-            people: people  
+            people: people ,
+            friends: friends 
         })
     }
     catch(err){

@@ -29,7 +29,6 @@
   width: 80px;
   height: 80px;
   padding: 0px 5px 0px 15px;
-  border-radius: 5px;
 }
 
 .all-peoples .individual .individual-avatar img {
@@ -40,7 +39,7 @@
 .all-peoples .individual .individual-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   padding: 0px 10px;
 }
 
@@ -52,6 +51,10 @@
 
 .all-peoples .individual .individual-container .add-friend-button {
   padding: 0px 10px 0px 5px;
+}
+
+.all-peoples .individual .individual-container .add-friend-button a {
+  text-decoration: none;
 }
 
 .all-peoples .individual .individual-container .add-friend-button .friend-request-btn {
@@ -78,6 +81,36 @@
   border-radius: 5px;
   border: 0.3px solid blue;
   font-weight: 600;
+}
+
+.friends {
+  position: fixed;
+  width: 400px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 0px 3px 2px lightgray;
+}
+
+.friends .friend {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+}
+
+.friends .friend .friend-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.friends .friend .friend-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .home-middle {

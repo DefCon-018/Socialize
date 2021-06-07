@@ -18,8 +18,8 @@
                             <h3 class="individual-name"><%= individual.name %></h3>
                         </div>
                         <div class="add-friend-button">
-                            <button class="friend-request-btn"><span><i class="fas fa-plus"></i></span>Add Friend</button>
-                            <button class="view-profile-btn"><span>View Profile</button>
+                            <a href= "/friend/create/<%= individual._id %>" class="friend-request-btn"><span><i class="fas fa-plus"></i></span>Add Friend</a>
+                            <a href="/user/profile/<%= individual._id %> " class="view-profile-btn"><span>View Profile</a>
                         </div>
                     </div>
                 </div>
@@ -44,6 +44,25 @@
             <%}%>
         </div>
     </div>
+
+    
+    
+    <div class="friends">
+        <% if(locals.user){%>
+            <% for(let friend of friends){%>
+                <div class="friend">
+                    <div class="friend-avatar">
+                        <img src= "<%= friend.avatar %>">
+                    </div>
+                    <div class="friend-name">
+                        <h3><%= friend.name %></h3>
+                    </div>
+                </div>
+            <%}%>
+        <%}%>
+    </div>
+
+    
 </div>
 
 <%- include('_chat_box') -%>
