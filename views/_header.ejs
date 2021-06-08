@@ -1,9 +1,9 @@
 <link rel= "stylesheet" href="/css/header.css">
 <header>
-  <h1 class="left">Socialize</h1>
+  <a href="/" class="home"><h1 class="left">Socialize</h1></a>
   <div class="right">
       <% if(locals.user){%> 
-          <p id= "user-name">Hi, <%= user.name %></p>
+          <a id= "user-name"  href="/user/profile/<%= user._id %>">Hi, <%= user.name %></a>
           <a href="/user/log-out" id= 'signup-btn'>Log Out</a>
         <%}else{%>
           <a href="/user/sign-in" id= "login-btn">Log In</a>
