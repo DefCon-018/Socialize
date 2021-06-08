@@ -17,6 +17,15 @@ class ChatEngine{
         this.socket.on('connect', function(){
             console.log("connection established using socket...!");
 
+            let friends = $('.friend');
+            for(let friend of friends){
+                $(friend).click(function(e){
+                    let box = $('#friend-chat-box');
+                    $(box).removeClass('hide-box');
+                    $(box).addClass('chat-box');
+                })
+            }
+
             // self.socket.emit('logged_in', {
             //     email: self.userEmail,
             //     name: self.name,

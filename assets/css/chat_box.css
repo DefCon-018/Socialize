@@ -1,5 +1,6 @@
 .chat-box {
   position: fixed;
+  display: block;
   bottom: 2px;
   right: 10px;
   height: 400px;
@@ -16,10 +17,10 @@
   position: relative;
 }
 
-.chat-box .chat-box-header .make-small {
+.chat-box .chat-box-header .delete-box {
   position: absolute;
   right: 10px;
-  top: 1px;
+  top: 10px;
   color: white;
   cursor: pointer;
 }
@@ -77,8 +78,13 @@
   cursor: pointer;
 }
 
+.hide-box {
+  display: none;
+}
+
 .minimize-chat {
   position: fixed;
+  display: block;
   bottom: -360px;
   right: 10px;
   height: 400px;
@@ -95,10 +101,10 @@
   position: relative;
 }
 
-.minimize-chat .chat-box-header .make-small {
+.minimize-chat .chat-box-header .delete-box {
   position: absolute;
   right: 10px;
-  top: 1px;
+  top: 10px;
   color: white;
   cursor: pointer;
 }
