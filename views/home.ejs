@@ -50,13 +50,13 @@
     
     
     <div class="friends">
-        <div class="contact">
-            <h3>Contacts</h3>
-        </div>
-        <% if(friends.length == 0){%> 
-            <h3 class="no-contact">No Contact</h3>
-        <%}%>
         <% if(locals.user){%>
+            <div class="contact">
+                <h3>Contacts</h3>
+            </div>
+            <% if(friends.length == 0){%> 
+                <h3 class="no-contact">No Contact</h3>
+            <%}%>
             <% for(let friend of friends){%>
                 <div class="friend" data-email = "<%= friend.email %>" data-name= "<%= friend.name %>">
                     <div class="friend-avatar">

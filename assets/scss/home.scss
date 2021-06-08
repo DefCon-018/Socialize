@@ -6,7 +6,7 @@
 
 .all-peoples{
     position: absolute;
-    width: 25%;
+    width: 380px;
     left: 40px;
     top: 120px;
     box-shadow:  0px 0px 3px 2px lightgray;
@@ -459,4 +459,54 @@ friends:hover{
 
 .active-delete-pop-up-comment{
     display: block;
+}
+
+
+@media only screen and (max-width : 1415px){
+    .all-peoples{
+        left: 5px;
+    }
+}
+
+@media only screen and (max-width: 1291px){
+    .friends{
+        width: 300px;
+    }
+    .home-middle{
+        margin-left: 32%;
+    }
+}
+
+@media only screen and (max-width: 1203px){
+    .all-peoples{
+        display: none;
+    }
+    .home-middle{
+        width: 60%;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 1101px){
+    .home-middle{
+        width: 60%;
+        margin-left: 8px;
+    }
+}
+
+@media only screen and (max-width: 828px){
+    .friends{
+        display: none;
+    }
+    .home-middle{
+        width: 90%;
+        margin: 30px auto;
+    }
+}
+
+@media only screen and (max-width: 644px){
+    .home-middle{
+        width: 97%;
+        margin: 30px 0px;
+    }
 }

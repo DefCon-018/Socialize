@@ -1,6 +1,5 @@
 #profile-page{
     background-color: #DAE0E6;
-
     .update-profile{
         display: none;
         background-color: white;
@@ -131,8 +130,8 @@
         }
     }
     .profile-feed{
-        margin-top: 0px;
         background-color: #DAE0E6;
+        position: relative;
         .profile-left{
             position: absolute;
             width: 300px;
@@ -228,4 +227,49 @@
 //     color: gray;
 //     border-bottom: 2px solid white;
 //     transition: border-bottom 0.5s;
+// }
+
+@media only screen and (max-width : 1465px){
+    .home-middle{
+        margin-left: 40%;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1119px){
+    .home-middle{
+        margin-left: 48%;
+    }
+}
+
+@media only screen and (max-width: 937px){
+    .profile-left{
+        display: none;
+    }
+    .home-middle{
+        width: 60%;
+        margin: 30px auto;
+    }
+}
+
+@media only screen and (max-width: 828px){
+    .home-middle{
+        width: 80%;
+    }
+    .update-profile{
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 649px){
+    .home-middle{
+        width: 95%;
+    }
+}
+
+// @media only screen and (max-width: 644px){
+//     .home-middle{
+//         width: 97%;
+//         margin: 30px 0px;
+//     }
 // }

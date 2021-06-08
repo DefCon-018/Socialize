@@ -147,8 +147,8 @@
 }
 
 #profile-page .profile-feed {
-  margin-top: 0px;
   background-color: #DAE0E6;
+  position: relative;
 }
 
 #profile-page .profile-feed .profile-left {
@@ -248,4 +248,42 @@
   padding: 10px;
   text-align: center;
   color: gray;
+}
+
+@media only screen and (max-width: 1465px) {
+  .home-middle {
+    margin-left: 40%;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1119px) {
+  .home-middle {
+    margin-left: 48%;
+  }
+}
+
+@media only screen and (max-width: 937px) {
+  .profile-left {
+    display: none;
+  }
+  .home-middle {
+    width: 60%;
+    margin: 30px auto;
+  }
+}
+
+@media only screen and (max-width: 828px) {
+  .home-middle {
+    width: 80%;
+  }
+  .update-profile {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 649px) {
+  .home-middle {
+    width: 95%;
+  }
 }

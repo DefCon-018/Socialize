@@ -53,3 +53,40 @@ header .right a{
     display: inline;
     margin: 0px 20px;
 }
+
+.hamburger{
+    display: none;
+    color: blue;
+    z-index: 100;
+    padding: 8px 8px;
+    cursor: pointer;
+}
+
+.hamburger-content{
+    display:none;
+    position: fixed;
+    width: 70%;
+    right: 0;
+    height: 100vh;
+    background-color: black;
+}
+.hamburger-content a{
+    z-index: 500;
+    padding: 10px;
+    color: white;
+    border-bottom: 1px solid white;
+    display: block;
+    text-decoration: none;
+}
+.hamburger-content h1{
+    color: white;
+}
+
+@media only screen and (max-width: 828px){
+    .hamburger{
+        display: block;
+    }
+    .right{
+        display: none;
+    }
+}
