@@ -144,19 +144,19 @@ let deletePost = function(postLink){
         })
     })
     $(finalDelete).click(function(e){
-        // e.preventDefault();
-        //Todo delete a post
-        // $.ajax({
-        //     type: 'get',
-        //     url: actionUrl,
-        //     success: function(data){
-        //         console.log("data", data);
-        //         $(`#post-${data.data.post_id}`).remove();
-        //     },
-        //     error: function(error){
-        //         console.log(error.responseText);
-        //     }
-        // })
+        e.preventDefault();
+        console.log(actionUrl);
+        $.ajax({
+            type: 'get',
+            url: actionUrl,
+            success: function(data){
+                console.log("data", data);
+                $(`#post-${data.data.post_id}`).remove();
+            },
+            error: function(error){
+                console.log(error.responseText);
+            }
+        })
     })
 }
 let postCards = document.querySelectorAll('.post-card');
@@ -214,7 +214,15 @@ function addFriendship(person){
             type: 'get',
             url: url,
             success: function(data){
-                console.log(data);
+                console.log(data.data.friend_id);
+                $(`#person-${data.data.friend_id}`).remove();
+                new Noty({
+                    theme: 'relax',
+                    type: 'success',
+                    text: `Friend Added`,
+                    layout: 'topRight',
+                    timeout: 1000
+                }).show();
             },
             error: function(err){
                 console.log(err.responseText);

@@ -3,13 +3,15 @@
 <div class = "home-container">
     <% if(locals.user){%>
     <div class="all-peoples">
-        <div class="people-you-may-know">
-            <h3>People you may know</h3>
-        </div>
+        <% if(people.length > 1){ %> 
+            <div class="people-you-may-know">
+                <h3>People you may know</h3>
+            </div>
+        <%}%>
         <% if(locals.user){%> 
             <% for(let individual of people){%>
               <% if(locals.user.id != individual.id){%>
-                <div class="individual">
+                <div class="individual" id= "person-<%= individual._id %>">
                     <div class="individual-avatar">
                         <img src= "<%= individual.avatar %>">
                     </div>

@@ -4,6 +4,8 @@ const fs = require('fs');
 
 let IMAGE_PATH = path.join('/uploads/posts');
 const Post = require('../models/post');
+const Like = require('../models/like');
+const Comment = require('../models/comment');
 
 module.exports.create = function(req, res){
     const form = new formidable.IncomingForm({});
@@ -33,29 +35,34 @@ module.exports.deletePost = async function(req, res){
         let post = await Post.findById(req.params.id);
         if(post.user == req.user.id){
             fs.unlinkSync(path.join(__dirname, '..', post.image));
+
+            await Like.deleteMany({likeable: post, onModel: 'Post'});
+
             post.remove();
+
+
+
             await Comment.deleteMany({post: req.params.id});
+            
             console.log(req.params.id);
-            if(req.xhr){
-                console.log("YEs");
-                console.log(req.params.id);
-                return res.status(200).json({
-                    data: {
-                        post_id: req.params.id
-                    },
-                    message: "deleted successfully"
-                })
-            }
-            req.flash('success', 'Post and associated comments are deleted!');
-            return res.redirect('back');
+            
+            return res.status(200).json({
+                message: 'post deleted successfully',
+                data: {
+                    post_id: req.params.id
+                }
+            })
         }
         else{
-            req.flash('error', "you can't delete this post");
-            return res.redirect('back');
+            return res.status(401).json({
+                message: "unoauthorized"
+            })
         }
     }
     catch(err){
-        req.flash('error', err);
-        return res.redirect('back');
+        console.log(err);
+        return res.status(500).json({
+            message: "Internal server error"
+        })
     }
 }

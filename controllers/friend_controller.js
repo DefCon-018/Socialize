@@ -14,7 +14,8 @@ module.exports.create = async function(req, res){
             return res.status(200).json({
                 message: 'friendship establised successfully',
                 data: {
-
+                    friend_id: req.params.id,
+                    name: user.name
                 }
             })
         }

@@ -3,7 +3,7 @@ const User = require('../models/user');
 
 module.exports.home = async function(req, res){
     try{
-        let people = await User.find({});
+        let peoples = await User.find({});
         let posts = await Post.find({}).sort('-createdAt').populate('user').populate('likes').populate({
             path: 'comments',
             populate: {
@@ -25,7 +25,21 @@ module.exports.home = async function(req, res){
             }
         }
         // console.log(user_detail.friendship[0].to_user);
-        console.log(friends);
+        let people = [];
+        for(let person of peoples){
+            let flag = 0;
+            for(let friend of friends){
+                if(person.id == friend.id){
+                    flag = 1;
+                    break;
+                }
+            }
+            if(flag == 0){
+                people.push(person);
+            }
+        }
+        // console.log(people);
+        // console.log(friends);
         return res.render('home', {
             title: 'Socialize | Home',
             posts: posts,
