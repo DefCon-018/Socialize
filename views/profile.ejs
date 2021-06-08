@@ -29,18 +29,34 @@
             <h3>Introduction</h3>
             <h3>Friends</h3>
            </div>
-           <div class="other-options">
-            <a href= "/friend/create/<%= user_details._id %>" class="friend-request-btn"><span><i class="fas fa-plus"></i></span>Add Friend</a>
-           </div>
+           <% if(locals.user.id == user_details.id){%> 
+             <div class="other-options">
+                <button class="update-btn">Update Profile</button>
+             </div>
+           <%}else{%>
+            <div class="other-options">
+                <a href= "/friend/create/<%= user_details._id %>" class="friend-request-btn"><span><i class="fas fa-plus"></i></span>Add Friend</a>
+            </div>
+           <%}%>
         </div>
     </div>
-    <div class="update-profile">
 
+    <div class="update-profile">
+        <form action="/user/update/<%=user.id%>">
+            <label for= "name">Name : </label>
+            <input type="text" name="name" value="<%= user.name %>"><br>
+            <label form ="email">Email : </label>
+            <input type="text" name="email" value= "<%= user.email%>"><br>
+            <label for= "avatar">Change profile photo : </label>
+            <input type="file" name="avatar"><br>
+            <input type="submit" value="update">
+        </form>
     </div>
+
     <div class="profile-feed">
 
         <div class="profile-left">
-            <div class="profile-introduction">
+            <!-- <div class="profile-introduction">
                 <div class="intro">
                     <h3>Introduction</h3>
                 </div>
@@ -49,12 +65,15 @@
                     <h3><span><i class="fas fa-home"></i></span><h2></h2></h3>
                     <h3><span><i class="fas fa-map-marker-alt"></i></span><h2></h2></h3>
                 </div>
-            </div>
+            </div> -->
 
             <div class="all-photos">
                 <div class="intro">
                     <h3>Photos</h3>
                 </div>
+                <% if(posts.length == 0){%>
+                    <h3 class="not-available">No photos</h3>
+                <%}%>
                 <div class="photos">
                     <% for(let post of posts){%>
                         <div class="photo">
@@ -68,6 +87,9 @@
                 <div class="intro">
                     <h3>Friends</h3>
                 </div>
+                <% if(friends.length == 0){%>
+                    <h3 class="not-available">No friend yet</h3>
+                <%}%>
                 <div class="friends-container">
                     <% for(let friend of friends){%>
                         <div class="friend-about">
@@ -84,6 +106,17 @@
         </div>
 
         <div class="home-middle">
+
+            <% if(locals.user.id == user_details.id){%>
+                <div class="post-creating-form">
+                    <form enctype="multipart/form-data" action="/post/create" method="POST">
+                        <input type= "text" name="content" required placeholder="what's in your mind?">
+                        <input type="file" name="image" required>
+                        <input type="submit" value="Add Post">
+                    </form>
+                </div>
+            <%}%>
+
             <div class="all-posts">
                 <% for(let post of posts){%> 
                     <div class="post-card" id= "post-<%= post._id %>">
@@ -195,3 +228,4 @@
 </div>
 
 <script src= "/js/home.js"></script>
+<script src= "/js/profile.js"></script>
