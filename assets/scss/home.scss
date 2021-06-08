@@ -79,12 +79,20 @@
 
 .friends{
     position: fixed;
-    width: 400px;
+    width: 350px;
     right: 0px;
     display: flex;
     flex-direction: column;
     // background-color: white;
     // box-shadow:  0px 0px 3px 2px lightgray;
+    .contact{
+        padding: 10px 5px;
+    }
+    .no-contact{
+        padding: 10px 0px;
+        text-align: center;
+        color: gray;
+    }
     .friend{
         width: 100%;
         padding: 10px;
@@ -221,6 +229,9 @@ friends:hover{
                         margin: 10px;
                         font-weight: 700;
                         font-size: 0.9rem;
+                        span{
+                            padding: 0px 3px;
+                        }
                     }
                 }
             }

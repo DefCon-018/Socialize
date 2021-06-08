@@ -85,10 +85,20 @@
 
 .friends {
   position: fixed;
-  width: 400px;
+  width: 350px;
   right: 0px;
   display: flex;
   flex-direction: column;
+}
+
+.friends .contact {
+  padding: 10px 5px;
+}
+
+.friends .no-contact {
+  padding: 10px 0px;
+  text-align: center;
+  color: gray;
 }
 
 .friends .friend {
@@ -251,6 +261,10 @@ friends:hover {
   margin: 10px;
   font-weight: 700;
   font-size: 0.9rem;
+}
+
+.home-middle .all-posts .post-card .post-card-likes div .show-like span {
+  padding: 0px 3px;
 }
 
 .home-middle .all-posts .post-card .post-card-comments {
