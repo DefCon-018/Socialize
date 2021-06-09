@@ -85,10 +85,33 @@
     }
     #login{
         position: absolute;
-        left: -560px;
+        left: -620px;
     }
     #register{
         position: absolute;
         left: 57px;
+    }
+}
+
+@media only screen and (max-width: 1423px){
+    .form-box{
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 1423px){
+    .form-box{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 835px){
+    .form-box{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 649px){
+    .form-box{
+        width: 90%;
     }
 }
