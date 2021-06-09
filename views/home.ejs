@@ -81,6 +81,6 @@
 
 <% if(locals.user){%>
     <script>
-        new ChatEngine('chat-box', '<%= user.email %>');
+        new ChatEngine('chat-box', '<%= user.email %>', '<%= user.name %>');
     </script>
 <%}%>

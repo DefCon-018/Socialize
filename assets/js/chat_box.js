@@ -4,6 +4,7 @@ let chatBoxFun = function(chatBox){
     let minimize = $(' .chat-box-header', chatBox);
     let hideBox = $(' .delete-box', chatBox);
     $(hideBox).click(function(e){
+        e.stopPropagation();
         let className = $(chatBox).prop('class');
         if(className == 'chat-box'){
             $(chatBox).removeClass('chat-box');

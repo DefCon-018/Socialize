@@ -6,6 +6,16 @@ module.exports.chatSocket = function(socketServer){
     io.sockets.on('connection', function(socket){
         console.log("new connection reciever", socket.id);
 
+        socket.on('join', function(data){
+            console.log("joined", data.email);
+            socket.join(data.email);
+        })
+
+        socket.on('send_message', function(data){
+            io.in(data.chatRoom).emit('recieve_message', data);
+            io.in(data.userEmail).emit('recieve_message', data);
+        })
+
         // socket.on('logged_in', function(data){
         //     let user = {
         //         name: data.name,
@@ -49,8 +59,5 @@ module.exports.chatSocket = function(socketServer){
         //     io.in(data.chatRoom).emit('user_joined', data);
         // })
 
-        // socket.on('send_message', function(data){
-        //     io.in(data.chatRoom).emit('recieve_message', data);
-        // })
     })
 }
