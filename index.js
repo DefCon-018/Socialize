@@ -42,6 +42,7 @@ const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const LocalStrategy = require('./config/passport-local-strategy');
 const JWTStrategy = require('./config/passport-jwt-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
 
 // socket setup
 const chatServer = require('http').createServer();

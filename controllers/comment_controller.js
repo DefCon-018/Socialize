@@ -14,7 +14,6 @@ module.exports.create = async function(req, res){
             post.comments.push(comment);
             post.save();
             let comment1 = await Comment.findById(comment._id).populate('user').populate('post');
-            commentsMailer.newComment(comment1);
             return res.status(200).json({
                 message: 'get Comment successfully',
                 data: {
