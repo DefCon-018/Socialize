@@ -37,6 +37,13 @@ let deleteCommentHandler = function(commentLink){
             success: function(data){
                 console.log(data);
                 $(`#comment-${data.data.comment_id}`).remove();
+                new Noty({
+                    theme: 'relax',
+                    type: 'success',
+                    text: `Comment deleted successfully`,
+                    layout: 'topRight',
+                    timeout: 1000
+                }).show();
             },
             error: function(err){
                 console.log(err.responseText);
@@ -89,6 +96,13 @@ let deletePost = function(postLink){
                 let getNewComment = $(`#comment-${data.data.comment._id}`) 
                 deleteCommentHandler(getNewComment);
                 console.log(newComment);
+                new Noty({
+                    theme: 'relax',
+                    type: 'success',
+                    text: `Comment added successfully`,
+                    layout: 'topRight',
+                    timeout: 1000
+                }).show();
             },
             error: function(err){
                 console.log(err.responseText);
@@ -152,6 +166,13 @@ let deletePost = function(postLink){
             success: function(data){
                 console.log("data", data);
                 $(`#post-${data.data.post_id}`).remove();
+                new Noty({
+                    theme: 'relax',
+                    type: 'success',
+                    text: `Post deleted successfully`,
+                    layout: 'topRight',
+                    timeout: 1000
+                }).show();
             },
             error: function(error){
                 console.log(error.responseText);

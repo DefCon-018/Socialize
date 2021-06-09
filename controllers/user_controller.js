@@ -2,6 +2,7 @@ const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
 const Post = require('../models/post');
+const signupMailer = require('../mailers/sign_up');
 
 module.exports.signIn = function(req, res){
     if(req.isAuthenticated()){
@@ -40,6 +41,7 @@ module.exports.create = function(req, res){
                     return;
                 }
                 console.log(user);
+                signupMailer.signUp(user);
                 return res.redirect('/user/sign-in');
             });
         }
