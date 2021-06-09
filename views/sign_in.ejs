@@ -3,19 +3,23 @@
 <div class= "background">
     <div class= "form-box">
         <div class= "button-box">
-            <div class="btn"></div>
-            <button id= "btn-login" type= "button" class= "toggle-btn" onclick="handleLogin()">Log In</button>
-            <button id= "btn-signup" type= "button" class= "toggle-btn" onclick="handleRegister()">Sign Up</button>
-        </div>
-        <div class= "social-icons">
-            <i class="fab fa-google"></i>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
+            <div id= "btn-login" type= "button" class= "toggle-btn active-btn" onclick="handleLogin()">Log In</div>
+            <div id= "btn-signup" type= "button" class= "toggle-btn" onclick="handleRegister()">Sign Up</div>
         </div>
         <form id= "login" class= "input-group" method="POST" action="/user/create-session">
             <input name= "email" class="input-field" type="text" required placeholder="Email">
             <input name= "password" class= "input-field" type= "password" required placeholder="password">
-            <input type= "checkbox" class= "check-box"> <span>Remember Password</span>
+            <div class="or-option">
+                <div class= "left">
+                </div>
+                <div class="or">OR</div>
+                <div class="right">
+                </div>
+            </div>
+            <a href="/user/auth/google" class="google-sign-up">
+                <span><img src= "https://image.flaticon.com/icons/png/128/2702/2702602.png"></span>
+                Sign In With Google
+            </a>
             <input type= "submit" class= "submit-btn" value= "Log In"> 
         </form>
         <form id= "register" class= "input-group" method="POST" action="/user/create">
@@ -23,7 +27,17 @@
             <input name= "email" class="input-field" type="email" required placeholder="Email">
             <input name= "password" class= "input-field" type= "password" required placeholder="password">
             <input name= "confirm_password" class= "input-field" type= "password" required placeholder="Confirm Password">
-            <input type= "checkbox" class= "check-box"> <span>I agree with term and conditions</span>
+            <div class="or-option">
+                <div class= "left">
+                </div>
+                <div class="or">OR</div>
+                <div class="right">
+                </div>
+            </div>
+            <a href="/user/auth/google" class="google-sign-up">
+                <span><img src= "https://image.flaticon.com/icons/png/128/2702/2702602.png"></span>
+                Sign In With Google
+            </a>
             <input type= "submit" class= "submit-btn" value= "Sign Up"> 
         </form>
     </div>

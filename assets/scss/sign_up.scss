@@ -1,0 +1,94 @@
+.form-box{
+    position: relative;
+    width: 35%;
+    margin: 50px auto;
+    background-color: white;
+    height: 450px;
+    overflow: hidden;
+    transition: all 0.5s;
+    .button-box{
+        display: flex;
+        padding: 10px;
+        width: 80%;
+        margin: 10px auto;
+        div{
+            width: 50%;
+            text-align: center;
+            border-bottom: 3px solid lightgray;
+            padding: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: gray;
+            cursor: pointer;
+        }
+        .active-btn{
+            border-bottom: 4px solid blue;
+            color: blue;
+        }
+    }
+    .input-group{
+        display: absolute;
+        width: 80%;
+        margin: auto;
+        transition: 0.5s;
+        input{
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        input[type= 'submit']{
+            background-color: blue;
+            color: white;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            margin: 15px 0px;
+        }
+        .or-option{
+            display: flex;
+            width: 80%;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            .left, .right{
+                width: 35%;
+                height: 0px;
+                border: 0.5px solid blue;
+            }
+            .or{
+                padding: 0px 10px;
+                font-size: 0.8rem;
+            }
+        }
+        .google-sign-up{
+            width: 98%;
+            margin: 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 3px;
+            border: 1.5px solid blue;
+            color: blue;
+            margin-top: 5px;
+            span{
+                width: 20px;
+                height: 20px;
+                padding: 5px 10px;
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        
+        }
+    }
+    #login{
+        position: absolute;
+        left: -560px;
+    }
+    #register{
+        position: absolute;
+        left: 57px;
+    }
+}

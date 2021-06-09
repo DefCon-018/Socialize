@@ -1,114 +1,107 @@
-.background{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #DAE0E6;
+.form-box {
+  position: relative;
+  width: 35%;
+  margin: 50px auto;
+  background-color: white;
+  height: 450px;
+  overflow: hidden;
+  transition: all 0.5s;
 }
 
-.form-box{
-    margin: 62px 0px;
-    width: 500px;
-    height: 550px;
-    background-color: white;
-    position: relative;
-    overflow: hidden;
-    /* box-shadow: 0px 0px 3px 4px lightgray; */
+.form-box .button-box {
+  display: flex;
+  padding: 10px;
+  width: 80%;
+  margin: 10px auto;
 }
 
-.button-box{
-    width: 230px;
-    margin: 35px auto;
-    position: relative;
-    box-shadow: 0px 0px 20px 9px #ff61241f;
-    border-radius: 30px;
-}
-.toggle-btn{
-    padding: 10px 30px;
-    background: transparent;
-    outline: none;
-    border: 0;
-    cursor: pointer;
-    position: relative;
-    font-weight: 700;
-    color: blue;
-}
-.btn{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, blue, violet);
-    border-radius: 30px;
-    transition: 0.5s;
+.form-box .button-box div {
+  width: 50%;
+  text-align: center;
+  border-bottom: 3px solid lightgray;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: gray;
+  cursor: pointer;
 }
 
-.social-icons{
-    margin: 30px auto;
-    text-align: center;
-}
-.social-icons i{
-    padding: 10px 15px;
-    border-radius: 50%;
-    margin: 0 10px 0 10px;
-    background: linear-gradient(to right, blue, violet);
-    color: white;
-    cursor: pointer;
+.form-box .button-box .active-btn {
+  border-bottom: 4px solid blue;
+  color: blue;
 }
 
-.input-group{
-    position: absolute;
-    top: 40%;
-    width: 300px;
-    margin: auto;
-    transition: 0.5s;
+.form-box .input-group {
+  display: absolute;
+  width: 80%;
+  margin: auto;
+  transition: 0.5s;
 }
 
-.input-field{
-    width: 100%;
-    background: transparent;
-    margin: 5px 0;
-    padding: 10px 0;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid black;
+.form-box .input-group input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
 }
 
-.submit-btn{
-    width: 80%;
-    background: linear-gradient(to right, blue, violet);
-    color: white;
-    font-weight: 700;
-    margin: auto;
-    display: block;
-    padding: 10px 30px;
-    border-radius: 30px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-}
-.input-field:focus{
-    outline: none;
-}
-.check-box{
-    margin: 30px 10px 30px 0;
-}
-span{
-    color: #777;
-    font-size: 12px;
-    bottom: 68px;
-    position: absolute;
+.form-box .input-group input[type='submit'] {
+  background-color: blue;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 15px 0px;
 }
 
-#login{
-    left: 100px;
-}
-#register{
-    left: 550px;
+.form-box .input-group .or-option {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
 }
 
-#btn-login{
-    color: white;
+.form-box .input-group .or-option .left, .form-box .input-group .or-option .right {
+  width: 35%;
+  height: 0px;
+  border: 0.5px solid blue;
+}
+
+.form-box .input-group .or-option .or {
+  padding: 0px 10px;
+  font-size: 0.8rem;
+}
+
+.form-box .input-group .google-sign-up {
+  width: 98%;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 3px;
+  border: 1.5px solid blue;
+  color: blue;
+  margin-top: 5px;
+}
+
+.form-box .input-group .google-sign-up span {
+  width: 20px;
+  height: 20px;
+  padding: 5px 10px;
+}
+
+.form-box .input-group .google-sign-up span img {
+  width: 20px;
+  height: 20px;
+}
+
+.form-box #login {
+  position: absolute;
+  left: 57px;
+}
+
+.form-box #register {
+  position: absolute;
+  left: 600px;
 }
