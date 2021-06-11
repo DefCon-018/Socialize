@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/people.css">
+<div class="show-all-people">
+    <div class="people-heading">
+        <h3>People you may know</h3>
+        <% if(people.length == 1){%>
+            <h2 class="no">No people to show</h2>
+        <%}%>
+    </div>
+    <div class="one-person">
+        <% for(let individual of people){%>
+            <% if(locals.user.id != individual.id){ %>
+                <div class="individual" id= "person-<%= individual._id %>">
+                    <div class="individual-avatar">
+                        <img src= "<%= individual.avatar %>">
+                    </div>
+                    <div class="individual-container">
+                        <div class="individual-details">
+                            <h3 class="individual-name"><%= individual.name %></h3>
+                        </div>
+                        <div class="add-friend-button">
+                            <a href= "/friend/create/<%= individual._id %>" class="friend-request-btn"><span><i class="fas fa-plus"></i></span>Add Friend</a>
+                            <a href="/user/profile/<%= individual._id %> " class="view-profile-btn"><span>View Profile</a>
+                        </div>
+                    </div>
+                </div> 
+            <%}%>
+        <%}%>
+    </div>
+</div>
+
+<script src= "/js/people.js"></script>

@@ -19,7 +19,7 @@
     <% if(locals.user){%>
       <a href="/user/profile/<%= user._id %>">Profile</a>
       <a href="/user/log-out">Log Out</a>
-      <a id= "show-all-people">People</a>
+      <a href= "/user/people-you-may-know/<%= user.id %>" id= "show-all-people">People</a>
       <a id= "show-all-contacts">Contacts</a>  
     <%}else{%>
       <a href="/user/sign-in">Log In</a>

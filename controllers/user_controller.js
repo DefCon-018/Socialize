@@ -121,3 +121,36 @@ module.exports.update = async function(req, res){
         return res.redirect('back');
     }
 }
+
+module.exports.peoples = async function(req, res){
+    let user_detail = await User.findById(req.params.id).populate({
+        path: 'friendship',
+        populate:{
+            path: 'to_user',
+            populate: 'user'
+        }
+    });
+    let friends = [];
+    for(let friend of user_detail.friendship){
+        friends.push(friend.to_user);
+    }
+    let peoples = await User.find({});
+
+    let people = [];
+    for(let person of peoples){
+        let flag = 0;
+        for(let friend of friends){
+            if(person.id == friend.id){
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 0){
+            people.push(person);
+        }
+    }
+    return res.render('people', {
+        title: 'Socialize | people',
+        people: people
+    })
+}

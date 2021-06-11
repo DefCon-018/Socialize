@@ -21,5 +21,6 @@ router.post('/update/:id', passport.checkAuthentication, userController.update);
 
 router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/sign-in'}), userController.createSession);
+router.get('/people-you-may-know/:id', userController.peoples);
 
 module.exports = router;
