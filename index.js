@@ -1,12 +1,14 @@
 const express = require('express');
 const port = 8000;
 const app = express();
+const env = require('./config/environment');
+const path = require('path');
 
 //sass middleware
 const sassMiddleware = require('node-sass-middleware');
 app.use(sassMiddleware({
-    src: './assets/scss',
-    dest: './assets/css',
+    src: path.join(__dirname, env.asset_path, 'scss'),
+    dest: path.join(__dirname, env.asset_path, 'css'),
     debug: true,
     outputStyle: 'expanded',
     prefix: '/css'
@@ -18,7 +20,7 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // for static files
-app.use(express.static('assets'));
+app.use(express.static(env.asset_path));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.urlencoded());
 
@@ -53,7 +55,7 @@ console.log("chat server is running on port 5000");
 const session = require('express-session');
 app.use(session({
     name: 'Socialize', 
-    secret: 'Something',
+    secret: env.session_cookie_key,
     saveUninitialized : false,
     resave: false,
     cookie: {
