@@ -1,5 +1,6 @@
 #profile-page {
   background-color: #DAE0E6;
+  padding-bottom: 20px;
 }
 
 #profile-page .update-profile {
@@ -112,12 +113,8 @@
   padding: 8px 10px;
   cursor: pointer;
   color: gray;
-  border-bottom: 2px solid white;
+  border-bottom: 3px solid blue;
   transition: border-bottom 0.5s;
-}
-
-#profile-page .profile-cover-photo .profile-options .options h3:hover {
-  border-bottom: 2px solid blue;
 }
 
 #profile-page .profile-cover-photo .profile-options .other-options button {
@@ -153,8 +150,9 @@
 
 #profile-page .profile-feed .profile-left {
   position: absolute;
-  width: 300px;
-  left: 140px;
+  width: 350px;
+  left: 100px;
+  padding-bottom: 20px;
 }
 
 #profile-page .profile-feed .profile-left .profile-introduction {
@@ -220,6 +218,7 @@
 #profile-page .profile-feed .profile-left .all-friends .friends-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #profile-page .profile-feed .profile-left .all-friends .friends-container .friend-about {
@@ -250,6 +249,12 @@
   color: gray;
 }
 
+@media only screen and (max-width: 1900px) {
+  .home-middle {
+    margin-left: 40%;
+  }
+}
+
 @media only screen and (max-width: 1465px) {
   .home-middle {
     margin-left: 40%;
@@ -257,9 +262,9 @@
   }
 }
 
-@media only screen and (max-width: 1119px) {
+@media only screen and (max-width: 1240px) {
   .home-middle {
-    margin-left: 48%;
+    margin-left: 49%;
   }
 }
 
