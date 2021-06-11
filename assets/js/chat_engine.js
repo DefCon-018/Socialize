@@ -64,29 +64,32 @@ class ChatEngine{
             })
 
             self.socket.on('open_message_box', function(data){
-                let box = $('#friend-chat-box');
-                $(box).removeClass('hide-box');
-                $(box).addClass('chat-box');
-                let to_user = data.userEmail;
-                let name = data.name;
-                if(data.name !== self.name && data.flag == 1){
-                    $('.chat-box-name').text('')
-                    $('.chat-box-name').append(name);
-                    data.flag = 0;
-                }
-                console.log(to_user);
-                $('#message-send').click(function(e){
-                    e.preventDefault();
-                    let msg = $('#chat-message').val();
-                    $('#chat-message').val('');
-                    if(msg != ''){
-                        self.socket.emit('send_message', {
-                            message: msg,
-                            userEmail: self.userEmail,
-                            chatRoom: to_user
-                        })
+                if(data.chatRoom == self.userEmail){
+                    let box = $('#friend-chat-box');
+                    $(box).removeClass('hide-box');
+                    $(box).addClass('chat-box');
+                    let to_user = data.userEmail;
+                    let name = data.name;
+                    if(data.name !== self.name && data.flag == 1){
+                        $('.chat-box-name').text('')
+                        $('.chat-box-name').append(name);
+                        data.flag = 0;
                     }
-                })
+                    console.log(to_user);
+                    $('#message-send').click(function(e){
+                        e.preventDefault();
+                        let msg = $('#chat-message').val();
+                        $('#chat-message').val('');
+                        if(msg != ''){
+                            self.socket.emit('send_message', {
+                                message: msg,
+                                userEmail: self.userEmail,
+                                chatRoom: to_user,
+                                flag: data.flag
+                            })
+                        }
+                    })
+                }
             })
             
         })
