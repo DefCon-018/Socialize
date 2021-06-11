@@ -89,6 +89,8 @@
   right: 0px;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .friends .contact {
@@ -122,8 +124,8 @@
   border-radius: 50%;
 }
 
-friends:hover {
-  background-color: gray;
+.friend:hover {
+  background-color: #E4E6E9;
 }
 
 .home-middle {
