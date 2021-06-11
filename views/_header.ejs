@@ -20,7 +20,7 @@
       <a href="/user/profile/<%= user._id %>">Profile</a>
       <a href="/user/log-out">Log Out</a>
       <a href= "/user/people-you-may-know/<%= user.id %>" id= "show-all-people">People</a>
-      <a id= "show-all-contacts">Contacts</a>  
+      <a href="/user/contacts/<%= user.id %>" id= "show-all-contacts">Contacts</a>  
     <%}else{%>
       <a href="/user/sign-in">Log In</a>
       <a href="/user/sign-up">Sign Up</a>

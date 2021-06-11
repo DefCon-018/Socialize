@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/contact.css">
+<div class="friends">
+    <% if(locals.user){%>
+        <div class="contact">
+            <h3>Contacts</h3>
+        </div>
+        <% if(friends.length == 0){%> 
+            <h3 class="no-contact">No Contact</h3>
+        <%}%>
+        <% for(let friend of friends){%>
+            <div class="friend" data-email = "<%= friend.email %>" data-name= "<%= friend.name %>">
+                <div class="friend-avatar">
+                    <img src= "<%= friend.avatar %>">
+                </div>
+                <div class="friend-name">
+                    <h3><%= friend.name %></h3>
+                </div>
+            </div>
+        <%}%>
+    <%}%>
+</div>

@@ -154,3 +154,28 @@ module.exports.peoples = async function(req, res){
         people: people
     })
 }
+
+module.exports.contacts = async function(req, res){
+    try{
+        let user_detail = await User.findById(req.params.id).populate({
+            path: 'friendship',
+            populate: {
+                path: 'to_user',
+                populate: 'user'
+            }
+        });
+        let friends = [];
+        for(let friend of user_detail.friendship){
+            friends.push(friend.to_user);
+        }
+        // console.log(friends);
+        return res.render('contact', {
+            title: 'Socialize | contacts',
+            friends: friends
+        })
+    }
+    catch(err){
+        console.log(err);
+        return res.redirect('back');
+    }
+}
