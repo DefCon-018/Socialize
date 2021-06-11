@@ -19,14 +19,14 @@
     <% if(locals.user){%>
       <a href="/user/profile/<%= user._id %>">Profile</a>
       <a href="/user/log-out">Log Out</a>
-      <a>People</a>
-      <a>Contacts</a>  
+      <a id= "show-all-people">People</a>
+      <a id= "show-all-contacts">Contacts</a>  
     <%}else{%>
-      <a href="/user/sign-in" id= "login-btn">Log In</a>
-      <a href="/user/sign-up" id= 'signup-btn'>Sign Up</a>
+      <a href="/user/sign-in">Log In</a>
+      <a href="/user/sign-up">Sign Up</a>
     <%}%>
   </div>
 </header>
-
+<script src= "/js/header.js"></script>
 
 

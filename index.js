@@ -6,13 +6,16 @@ const path = require('path');
 
 //sass middleware
 const sassMiddleware = require('node-sass-middleware');
-app.use(sassMiddleware({
-    src: path.join(__dirname, env.asset_path, 'scss'),
-    dest: path.join(__dirname, env.asset_path, 'css'),
-    debug: true,
-    outputStyle: 'expanded',
-    prefix: '/css'
-}))
+
+if(env.name == "development"){
+    app.use(sassMiddleware({
+        src: path.join(__dirname, env.asset_path, 'scss'),
+        dest: path.join(__dirname, env.asset_path, 'css'),
+        debug: true,
+        outputStyle: 'expanded',
+        prefix: '/css'
+    }))
+}
 
 
 // for view engine
@@ -62,7 +65,7 @@ app.use(session({
         maxAge: (1000*60*100)
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb://localhost/socialize_development',
+        mongoUrl: `mongodb://localhost/${env.db}`,
         autoRemove: 'disabled'
     })
 }))

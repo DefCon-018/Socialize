@@ -22,7 +22,7 @@ const development = {
 
 const production = {
     name: "production",
-    asset_path: process.env.SOCIALIZE_ASSET_PATH,
+    asset_path: process.env.SOCIALIZE_ASSETS_PATH,
     session_cookie_key: process.env.SOCIALIZE_SESSION_COOKIE_KEY,
     db: process.env.SOCIALIZE_DB,
     smtp: {
