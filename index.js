@@ -3,6 +3,8 @@ const port = 8000;
 const app = express();
 const env = require('./config/environment');
 const path = require('path');
+const logger = require('morgan');
+console.log(env.morgan.mode);
 
 //sass middleware
 const sassMiddleware = require('node-sass-middleware');
@@ -30,6 +32,8 @@ app.use(express.urlencoded());
 // cookie parse 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
+
+app.use(logger('combined', env.morgan.options));
 
 // for layouts 
 const expressLayouts = require('express-ejs-layouts');
