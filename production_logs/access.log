@@ -25,3 +25,4 @@
 ::1 - - [12/Jun/2021:07:06:01 +0000] "GET / HTTP/1.1" 500 1802 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
 ::1 - - [12/Jun/2021:07:08:00 +0000] "GET / HTTP/1.1" 200 2591 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
 ::1 - - [12/Jun/2021:07:08:02 +0000] "GET /user/sign-in HTTP/1.1" 200 4351 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
+::1 - - [12/Jun/2021:07:08:03 +0000] "GET /user/sign-up HTTP/1.1" 200 4350 "http://localhost:8000/user/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
