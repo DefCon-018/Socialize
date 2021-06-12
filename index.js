@@ -6,6 +6,8 @@ const path = require('path');
 const logger = require('morgan');
 console.log(env.morgan.mode);
 
+require('./config/view_helper')(app);
+
 //sass middleware
 const sassMiddleware = require('node-sass-middleware');
 

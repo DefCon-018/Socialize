@@ -1,0 +1,1 @@
+let hamburger=$(".hamburger"),content=$(".hamburger-content");$(hamburger).click((function(e){$(content).slideToggle()}));let showPeople=$("#show-all-people"),contacts=$("#show -all-contacts");

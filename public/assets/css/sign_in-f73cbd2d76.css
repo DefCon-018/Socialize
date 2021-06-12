@@ -1,0 +1,131 @@
+.form-box {
+  position: relative;
+  width: 35%;
+  margin: 50px auto;
+  background-color: white;
+  height: 450px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.form-box .button-box {
+  display: flex;
+  padding: 10px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.form-box .button-box div {
+  width: 50%;
+  text-align: center;
+  border-bottom: 3px solid lightgray;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: gray;
+  cursor: pointer;
+}
+
+.form-box .button-box .active-btn {
+  border-bottom: 4px solid blue;
+  color: blue;
+}
+
+.form-box .input-group {
+  display: absolute;
+  width: 80%;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.form-box .input-group input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.form-box .input-group input[type='submit'] {
+  background-color: blue;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 15px 0px;
+}
+
+.form-box .input-group .or-option {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.form-box .input-group .or-option .left, .form-box .input-group .or-option .right {
+  width: 35%;
+  height: 0px;
+  border: 0.5px solid blue;
+}
+
+.form-box .input-group .or-option .or {
+  padding: 0px 10px;
+  font-size: 0.8rem;
+}
+
+.form-box .input-group .google-sign-up {
+  width: 98%;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 3px;
+  border: 1.5px solid blue;
+  color: blue;
+  margin-top: 5px;
+}
+
+.form-box .input-group .google-sign-up span {
+  width: 20px;
+  height: 20px;
+  padding: 5px 10px;
+}
+
+.form-box .input-group .google-sign-up span img {
+  width: 20px;
+  height: 20px;
+}
+
+.form-box #login {
+  position: absolute;
+  left: 57px;
+}
+
+.form-box #register {
+  position: absolute;
+  left: 750px;
+}
+
+@media only screen and (max-width: 1423px) {
+  .form-box {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 1423px) {
+  .form-box {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 835px) {
+  .form-box {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 649px) {
+  .form-box {
+    width: 90%;
+  }
+}

@@ -1,0 +1,84 @@
+header {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 0px 3px 3px lightgray;
+  z-index: 4;
+}
+
+.home {
+  text-decoration: none;
+}
+
+header .left {
+  color: blue;
+  margin-left: 40px;
+  padding: 12px;
+}
+
+header .right {
+  padding: 12px;
+}
+
+header .right a {
+  margin: 0px 20px;
+  padding: 8px 20px;
+  border: 1px solid blue;
+  cursor: pointer;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#signup-btn {
+  background-color: blue;
+  color: white;
+  transition: all 0.5s;
+}
+
+#signup-btn:hover {
+  background-color: blueviolet;
+  border: 1px solid blueviolet;
+}
+
+#user-name, #login-btn {
+  border: 1px solid blue;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: pink;
+  width: 100%;
+  z-index: 1000;
+}
+
+.hamburger-content a {
+  color: blue;
+  display: block;
+  padding: 10px;
+  border-top: 0.2px solid gray;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 828px) {
+  .right {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    color: blue;
+    margin: 0px 10px;
+  }
+}

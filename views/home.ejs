@@ -1,4 +1,4 @@
-<link rel= 'stylesheet' href= "/css/home.css">
+<link rel= 'stylesheet' href= "<%= assetPath('css/home.css') %>">
 
 <div class = "home-container">
     <% if(locals.user){%>
@@ -76,8 +76,8 @@
 <%- include('_chat_box') -%>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src= "/js/chat_engine.js"></script>
-<script src= "/js/home.js"></script>
+<script src= "<%= assetPath('js/chat_engine.js') %>"></script>
+<script src= "<%= assetPath('js/home.js') %>"></script>
 
 <% if(locals.user){%>
     <script>

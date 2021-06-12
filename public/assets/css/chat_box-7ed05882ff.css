@@ -1,0 +1,150 @@
+.chat-box {
+  position: fixed;
+  display: block;
+  bottom: 2px;
+  right: 10px;
+  height: 400px;
+  width: 300px;
+  border: 0.5px solid black;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.chat-box .chat-box-header {
+  background-color: blue;
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+
+.chat-box .chat-box-header .delete-box {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-box .chat-box-header .chat-box-name {
+  color: white;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.chat-box #chat-box-body {
+  width: 100%;
+  height: 323px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.chat-box #chat-box-body .others-message {
+  width: 70%;
+  background-color: lightgray;
+  padding: 10px;
+  margin: 8px 6px;
+  border-radius: 5px;
+}
+
+.chat-box #chat-box-body .my-message {
+  width: 70%;
+  background-color: blueviolet;
+  float: right;
+  padding: 10px;
+  margin: 8px 6px 8px 60px;
+  color: white;
+  border-radius: 5px;
+}
+
+.chat-box .chat-box-footer {
+  width: 100%;
+}
+
+.chat-box .chat-box-footer input[type="text"] {
+  padding: 8px;
+  width: 68%;
+  margin-left: 1px;
+  margin-right: -2px;
+}
+
+.chat-box .chat-box-footer input[type="text"]:focus {
+  outline: none;
+}
+
+.chat-box .chat-box-footer button {
+  padding: 10px;
+  width: 30%;
+  background-color: blue;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hide-box {
+  display: none;
+}
+
+.minimize-chat {
+  position: fixed;
+  display: block;
+  bottom: -360px;
+  right: 10px;
+  height: 400px;
+  width: 300px;
+  border: 0.5px solid black;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.minimize-chat .chat-box-header {
+  background-color: blue;
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+
+.minimize-chat .chat-box-header .delete-box {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.minimize-chat .chat-box-header .chat-box-name {
+  color: white;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.minimize-chat #chat-box-body {
+  width: 100%;
+  height: 323px;
+}
+
+.minimize-chat .chat-box-footer {
+  width: 100%;
+}
+
+.minimize-chat .chat-box-footer input[type="text"] {
+  padding: 8px;
+  width: 68%;
+}
+
+.minimize-chat .chat-box-footer input[type="text"]:focus {
+  outline: none;
+}
+
+.minimize-chat .chat-box-footer button {
+  padding: 10px;
+  width: 30%;
+  background-color: blue;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}

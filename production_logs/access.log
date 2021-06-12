@@ -1,3 +1,27 @@
 ::1 - - [12/Jun/2021:04:04:11 +0000] "GET /message/get-messages HTTP/1.1" 500 35 "http://localhost:8000/?" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
 ::1 - - [12/Jun/2021:04:04:26 +0000] "GET / HTTP/1.1" 200 2503 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
 ::1 - - [12/Jun/2021:04:04:36 +0000] "GET /user/sign-in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
+[0mGET / [32m200[0m 603.726 ms - 10274[0m
+[0mGET /user/sign-in [32m200[0m 83.801 ms - 4291[0m
+[0mGET /user/css/layout.css [33m404[0m 33.535 ms - 158[0m
+[0mGET /user/css/sign_in.css [33m404[0m 53.781 ms - 159[0m
+[0mGET /user/css/header.css [33m404[0m 80.378 ms - 158[0m
+[0mGET /user/js/sign_in.js [33m404[0m 37.186 ms - 157[0m
+[0mGET /user/js/header.js [33m404[0m 38.914 ms - 156[0m
+[0mGET /user/sign-in [32m200[0m 50.314 ms - 4296[0m
+[0mPOST /user/create-session [36m302[0m 73.558 ms - 46[0m
+[0mGET / [32m200[0m 224.760 ms - 26890[0m
+[0mGET /message/get-messages [32m200[0m 27.518 ms - 2287[0m
+[0mGET /user/profile/60b447f3271d1b70a4affbca [32m200[0m 258.909 ms - 31015[0m
+[0mGET /user/people-you-may-know/60b447f3271d1b70a4affbca [32m200[0m 306.553 ms - 2402[0m
+[0mGET /user/contacts/60b447f3271d1b70a4affbca [32m200[0m 81.503 ms - 5505[0m
+[0mGET /user/profile/60b447f3271d1b70a4affbca [36m304[0m 169.488 ms - -[0m
+[0mGET / [32m200[0m 140.117 ms - 26675[0m
+[0mGET /message/get-messages [36m304[0m 14.056 ms - -[0m
+[0mGET /message/create/?id=60bb55b160ca900118799390&msg=Hello [32m200[0m 69.755 ms - 42[0m
+[0mGET / [36m304[0m 283.543 ms - -[0m
+[0mGET /message/get-messages [32m200[0m 47.851 ms - 2498[0m
+::1 - - [12/Jun/2021:07:05:56 +0000] "GET /message/get-messages HTTP/1.1" 500 35 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
+::1 - - [12/Jun/2021:07:06:01 +0000] "GET / HTTP/1.1" 500 1802 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
+::1 - - [12/Jun/2021:07:08:00 +0000] "GET / HTTP/1.1" 200 2591 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
+::1 - - [12/Jun/2021:07:08:02 +0000] "GET /user/sign-in HTTP/1.1" 200 4351 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"

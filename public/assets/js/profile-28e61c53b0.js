@@ -1,0 +1,1 @@
+let updateBtn=$(".update-btn"),updateProfile=$(".update-profile");$(updateBtn).click((function(e){$(updateProfile).slideToggle()}));

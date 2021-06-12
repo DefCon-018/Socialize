@@ -1,0 +1,36 @@
+.friends {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.friends .contact {
+  padding: 10px 5px;
+}
+
+.friends .no-contact {
+  padding: 10px 0px;
+  text-align: center;
+  color: gray;
+}
+
+.friends .friend {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.friends .friend .friend-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.friends .friend .friend-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
