@@ -13,6 +13,7 @@ module.exports.chatSocket = function(socketServer){
 
         socket.on('send_message', function(data){
             if(data.flag == 1){
+                console.log("hello");
                 io.in(data.chatRoom).emit('open_message_box', data);
             }
             io.in(data.chatRoom).emit('recieve_message', data);

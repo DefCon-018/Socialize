@@ -58,7 +58,7 @@
                 <h3 class="no-contact">No Contact</h3>
             <%}%>
             <% for(let friend of friends){%>
-                <div class="friend" data-email = "<%= friend.email %>" data-name= "<%= friend.name %>">
+                <div class="friend" data-email = "<%= friend.email %>" data-name= "<%= friend.name %>" data-id= "<%= friend._id %>">
                     <div class="friend-avatar">
                         <img src= "<%= friend.avatar %>">
                     </div>
@@ -81,6 +81,6 @@
 
 <% if(locals.user){%>
     <script>
-        new ChatEngine('chat-box', '<%= user.email %>', '<%= user.name %>');
+        new ChatEngine('chat-box', '<%= user.email %>', '<%= user.name %>', '<%= user._id %>');
     </script>
 <%}%>

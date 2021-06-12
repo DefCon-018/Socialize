@@ -10,5 +10,6 @@ router.use('/comment', require('./comment'));
 router.use('/api', require('./api'));
 router.use('/like', require('./like'));
 router.use('/friend', require('./friend'));
+router.use('/message', require('./message'));
 
 module.exports = router;
