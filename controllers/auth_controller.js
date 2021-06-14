@@ -63,7 +63,7 @@ module.exports.reset = async function(request , response){
                     user.save();
 
                     request.flash('success' , 'Password Changed');
-                    return response.redirect('/users/sign-in');
+                    return response.redirect('/user/sign-in');
                 }
             }else{
                 return response.redirect('back');

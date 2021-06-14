@@ -40,7 +40,7 @@
     </div>
 
     <div class="update-profile">
-        <form action="/user/update/<%=user.id%>">
+        <form action="/user/update/<%=user.id%>" method="POST" enctype="multipart/form-data">
             <label for= "name">Name : </label>
             <input type="text" name="name" value="<%= user.name %>"><br>
             <label form ="email">Email : </label>

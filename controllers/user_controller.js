@@ -22,8 +22,6 @@ module.exports.signUp = function(req, res){
     })
 }
 
-let avatarPath = path.join('/uploads/users/avatars/images.png');
-
 module.exports.create = function(req, res){
     if(req.body.password != req.body.confirm_password){
         return res.redirect('back');
@@ -34,7 +32,6 @@ module.exports.create = function(req, res){
                 name: req.body.name,
                 email: req.body.email, 
                 password: req.body.password,
-                avatar: avatarPath
             }, function(err, user){
                 if(err){
                     console.log("Error in creating the user in create", err);
@@ -74,7 +71,7 @@ module.exports.profile = async function(req, res){
             path: 'user'
         }
     })
-    console.log(friends);
+    // console.log(friends);
     return res.render('profile', {
         title: 'Socialize | profile',
         friends: friends,
@@ -101,11 +98,13 @@ module.exports.update = async function(req, res){
                 user.name = req.body.name;
                 user.email = req.body.email;
                 if(req.file){
+                    console.log("File exist");
                     if(user.avatar && fs.existsSync(path.join(__dirname, '..', user.avatar))){
                         fs.unlinkSync(path.join(__dirname, '..', user.avatar));
                     }
                     user.avatar = User.avatarPath + '/' + req.file.filename;
                 }
+                console.log(req.file);
                 user.save();
                 req.flash('success', 'Profile updated!');
                 return res.redirect('back');
