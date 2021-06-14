@@ -96,6 +96,11 @@
   height: 20px;
 }
 
+.form-box .input-group .forgot-password {
+  padding: 10px;
+  text-align: right;
+}
+
 .form-box #login {
   position: absolute;
   left: -620px;

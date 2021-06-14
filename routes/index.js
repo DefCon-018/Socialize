@@ -11,5 +11,6 @@ router.use('/api', require('./api'));
 router.use('/like', require('./like'));
 router.use('/friend', require('./friend'));
 router.use('/message', require('./message'));
+router.use('/auth', require('./auth'));
 
 module.exports = router;

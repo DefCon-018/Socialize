@@ -26,3 +26,35 @@
 ::1 - - [12/Jun/2021:07:08:00 +0000] "GET / HTTP/1.1" 200 2591 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
 ::1 - - [12/Jun/2021:07:08:02 +0000] "GET /user/sign-in HTTP/1.1" 200 4351 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
 ::1 - - [12/Jun/2021:07:08:03 +0000] "GET /user/sign-up HTTP/1.1" 200 4350 "http://localhost:8000/user/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
+[0mGET / [32m200[0m 674.149 ms - 10282[0m
+[0mGET /favicon.ico [33m404[0m 36.200 ms - 150[0m
+[0mGET /user/sign-in [32m200[0m 29.068 ms - 4296[0m
+[0mGET /user/sign-in [32m200[0m 25.022 ms - 4400[0m
+[0mGET /user/sign-in [36m304[0m 6.857 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 7.955 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 17.986 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 22.755 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 16.214 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 6.438 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 23.805 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 19.823 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 6.929 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 17.009 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 16.623 ms - -[0m
+[0mGET /user/sign-in [36m304[0m 19.558 ms - -[0m
+[0mGET /user/sign-in [32m200[0m 10.623 ms - 4413[0m
+[0mGET /user/sign-in [36m304[0m 8.948 ms - -[0m
+[0mGET /user/sign-up [32m200[0m 21.148 ms - 4412[0m
+[0mGET /user/sign-in [36m304[0m 9.580 ms - -[0m
+[0mGET /auth [32m200[0m 23.723 ms - 2171[0m
+[0mGET /auth [32m200[0m 18.209 ms - 2095[0m
+[0mGET /auth [36m304[0m 11.828 ms - -[0m
+[0mGET /auth [36m304[0m 18.486 ms - -[0m
+[0mGET /auth [36m304[0m 5.537 ms - -[0m
+[0mGET /auth [36m304[0m 14.969 ms - -[0m
+[0mGET /auth [36m304[0m 16.693 ms - -[0m
+[0mGET /auth [36m304[0m 16.567 ms - -[0m
+[0mGET /auth [32m200[0m 20.635 ms - 2157[0m
+[0mPOST /auth/verify-email [32m200[0m 129.140 ms - 2200[0m
+[0mPOST /auth/verify-email [32m200[0m 54.993 ms - 2199[0m
+[0mPOST /auth/verify-email [32m200[0m 42.762 ms - 2199[0m

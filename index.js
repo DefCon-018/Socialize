@@ -35,7 +35,7 @@ app.use(express.urlencoded());
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-app.use(logger('combined', env.morgan.options));
+app.use(logger('dev', env.morgan.options));
 
 // for layouts 
 const expressLayouts = require('express-ejs-layouts');

@@ -1,0 +1,12 @@
+<link type="text/css" rel="stylesheet" href="<%= assetPath('css/verify_email.css') %>" />
+
+<form method="POST" action='/auth/verify-email' class="login-form">
+
+  <div class="verify">Verify Account</div>
+  <div class="input">
+    <input type="email" name='email' placeholder="Email" required />
+  </div>
+  <div class="input">
+    <input type="submit" value="Send Mail">
+  </div>
+</form>

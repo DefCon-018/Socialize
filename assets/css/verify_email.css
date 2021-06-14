@@ -1,0 +1,33 @@
+.login-form {
+  width: 40%;
+  margin: 30px auto;
+  height: 200px;
+  background-color: white;
+}
+
+.login-form .verify {
+  text-align: center;
+  padding: 10px;
+  width: 80%;
+  color: blue;
+  font-size: 1.2rem;
+}
+
+.login-form .input {
+  width: 80%;
+  padding: 8px;
+  margin: auto;
+}
+
+.login-form .input input {
+  width: 100%;
+  padding: 8px;
+}
+
+.login-form input[type="submit"] {
+  background-color: blue;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
